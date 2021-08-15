@@ -16,5 +16,1081 @@
   
   
   
+  <entry>
+    <title>常用影视站</title>
+    <link href="/2021/08/11/%E5%B8%B8%E7%94%A8%E5%BD%B1%E8%A7%86%E7%AB%99/"/>
+    <url>/2021/08/11/%E5%B8%B8%E7%94%A8%E5%BD%B1%E8%A7%86%E7%AB%99/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="在线观看："><a href="#在线观看：" class="headerlink" title="在线观看："></a>在线观看：</h1><h3 id="1231d电影：https-www-1231d-com"><a href="#1231d电影：https-www-1231d-com" class="headerlink" title="1231d电影：https://www.1231d.com/"></a>1231d电影：<a href="https://www.1231d.com/">https://www.1231d.com/</a></h3><h3 id="素白白影视：https-www-subaibai-com"><a href="#素白白影视：https-www-subaibai-com" class="headerlink" title="素白白影视：https://www.subaibai.com/"></a>素白白影视：<a href="https://www.subaibai.com/">https://www.subaibai.com/</a></h3><h3 id="低端影视：-https-ddrk-me"><a href="#低端影视：-https-ddrk-me" class="headerlink" title="低端影视： https://ddrk.me/"></a>低端影视： <a href="https://ddrk.me/">https://ddrk.me/</a></h3><h3 id="阿房影视：-https-bwl87-com"><a href="#阿房影视：-https-bwl87-com" class="headerlink" title="阿房影视： https://bwl87.com/"></a>阿房影视： <a href="https://bwl87.com/">https://bwl87.com/</a></h3><h3 id="奈菲影视：-https-www-nfmovies-com"><a href="#奈菲影视：-https-www-nfmovies-com" class="headerlink" title="奈菲影视： https://www.nfmovies.com/"></a>奈菲影视： <a href="https://www.nfmovies.com/">https://www.nfmovies.com/</a></h3><h1 id="下载类："><a href="#下载类：" class="headerlink" title="下载类："></a>下载类：</h1><h3 id="片库：-https-www-pianku-li"><a href="#片库：-https-www-pianku-li" class="headerlink" title="片库： https://www.pianku.li/"></a>片库： <a href="https://www.pianku.li/">https://www.pianku.li/</a></h3><h3 id="片源网：-https-pianyuanw-com"><a href="#片源网：-https-pianyuanw-com" class="headerlink" title="片源网： https://pianyuanw.com/"></a>片源网： <a href="https://pianyuanw.com/">https://pianyuanw.com/</a></h3><h3 id="高清电台：-https-gaoqing-fm"><a href="#高清电台：-https-gaoqing-fm" class="headerlink" title="高清电台： https://gaoqing.fm/"></a>高清电台： <a href="https://gaoqing.fm/">https://gaoqing.fm/</a></h3><h3 id="BT吧：-https-www-ibtba-cc"><a href="#BT吧：-https-www-ibtba-cc" class="headerlink" title="BT吧： https://www.ibtba.cc/"></a>BT吧： <a href="https://www.ibtba.cc/">https://www.ibtba.cc/</a></h3><h3 id="chaospace：https-www-chaospace-fun"><a href="#chaospace：https-www-chaospace-fun" class="headerlink" title="chaospace：https://www.chaospace.fun/"></a>chaospace：<a href="https://www.chaospace.fun/">https://www.chaospace.fun/</a></h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>uncategorized</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>拯救你的小盘鸡！Rclone挂载Google Drive或OneDirve</title>
+    <link href="/2021/08/11/%E6%8B%AF%E6%95%91%E4%BD%A0%E7%9A%84%E5%B0%8F%E7%9B%98%E9%B8%A1%EF%BC%81rclone%E6%8C%82%E8%BD%BDgoogle-drive%E6%88%96onedirve/"/>
+    <url>/2021/08/11/%E6%8B%AF%E6%95%91%E4%BD%A0%E7%9A%84%E5%B0%8F%E7%9B%98%E9%B8%A1%EF%BC%81rclone%E6%8C%82%E8%BD%BDgoogle-drive%E6%88%96onedirve/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h4 id="参考https-blog-laoda-de-archives-make-vps-bigger-toc-head-2"><a href="#参考https-blog-laoda-de-archives-make-vps-bigger-toc-head-2" class="headerlink" title="参考https://blog.laoda.de/archives/make-vps-bigger#toc-head-2"></a>参考<a href="https://blog.laoda.de/archives/make-vps-bigger#toc-head-2">https://blog.laoda.de/archives/make-vps-bigger#toc-head-2</a></h4><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有一些小鸡，它们的线路配置十分不错，但却有个致命缺点，那就是硬盘小。比如现在博客用的小鸡斯巴达，还有富强aria2用的dedipath，硬盘只有15G、10G，网站随便放点东西就满了，aria2也没法下大于10G的东西。那么有什么办法可以解决呢？</p><p>那就是OneDrive和Google Drive了。这两个分别可以达到25T和1Pb的容量，完全可以解决我们的一切需求。接下来就是教程。</p><h2 id="Rclone配置"><a href="#Rclone配置" class="headerlink" title="Rclone配置"></a>Rclone配置</h2><p>Rclone的配置OneDrive可以参考前面的<a href="https://www.eutaboo.com/index.php/2021/08/02/%e6%89%8b%e6%8a%8a%e6%89%8b%e6%95%99%e4%bd%a0%e6%90%ad%e5%bb%ba%e7%a7%81%e4%ba%ba%e7%a6%bb%e7%ba%bf%e4%b8%8b%e8%bd%bd%e7%a5%9e%e5%99%a8aria2%ef%bc%8c%e6%90%ad%e9%85%8drclone%e8%87%aa%e5%8a%a8%e4%b8%8a/#toc-head-3">文章</a>,接下来演示Google Drive的配置</p><ol><li>rclone config修改配置，然后输入<code>n</code>，在name处填入名字 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">root@linux:~# rclone config<br>No remotes found - make a new one<br>n) New remote<br>s) Set configuration password<br>q) Quit config<br>n/s/q&gt; n<br>name&gt; gd<br></code></pre></td></tr></table></figure></li><li>选择Google Drive，这里是<code>15</code>。（看好你自己的再填） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><code class="hljs text">Type of storage to configure.<br>Enter a string value. Press Enter for the default (&quot;&quot;).<br>Choose a number from below, or type in your own value<br>1 / 1Fichier<br>\ &quot;fichier&quot;<br>2 / Alias for an existing remote<br>\ &quot;alias&quot;<br>3 / Amazon Drive<br>\ &quot;amazon cloud drive&quot;<br>4 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, SeaweedFS, and Tencent COS<br>\ &quot;s3&quot;<br>5 / Backblaze B2<br>\ &quot;b2&quot;<br>6 / Box<br>\ &quot;box&quot;<br>7 / Cache a remote<br>\ &quot;cache&quot;<br>8 / Citrix Sharefile<br>\ &quot;sharefile&quot;<br>9 / Compress a remote<br>\ &quot;compress&quot;<br>10 / Dropbox<br>\ &quot;dropbox&quot;<br>11 / Encrypt/Decrypt a remote<br>\ &quot;crypt&quot;<br>12 / Enterprise File Fabric<br>\ &quot;filefabric&quot;<br>13 / FTP Connection<br>\ &quot;ftp&quot;<br>14 / Google Cloud Storage (this is not Google Drive)<br>\ &quot;google cloud storage&quot;<br>15 / Google Drive<br>\ &quot;drive&quot;<br>16 / Google Photos<br>\ &quot;google photos&quot;<br>17 / Hadoop distributed file system<br>\ &quot;hdfs&quot;<br>18 / Hubic<br>\ &quot;hubic&quot;<br>19 / In memory object storage system.<br>\ &quot;memory&quot;<br>20 / Jottacloud<br>\ &quot;jottacloud&quot;<br>21 / Koofr<br>\ &quot;koofr&quot;<br>22 / Local Disk<br>\ &quot;local&quot;<br>23 / Mail.ru Cloud<br>\ &quot;mailru&quot;<br>24 / Mega<br>\ &quot;mega&quot;<br>25 / Microsoft Azure Blob Storage<br>\ &quot;azureblob&quot;<br>26 / Microsoft OneDrive<br>\ &quot;onedrive&quot;<br>27 / OpenDrive<br>\ &quot;opendrive&quot;<br>28 / OpenStack Swift (Rackspace Cloud Files, Memset Memstore, OVH)<br>\ &quot;swift&quot;<br>29 / Pcloud<br>\ &quot;pcloud&quot;<br>30 / Put.io<br>\ &quot;putio&quot;<br>31 / QingCloud Object Storage<br>\ &quot;qingstor&quot;<br>32 / SSH/SFTP Connection<br>\ &quot;sftp&quot;<br>33 / Sugarsync<br>\ &quot;sugarsync&quot;<br>34 / Tardigrade Decentralized Cloud Storage<br>\ &quot;tardigrade&quot;<br>35 / Transparently chunk/split large files<br>\ &quot;chunker&quot;<br>36 / Union merges the contents of several upstream fs<br>\ &quot;union&quot;<br>37 / Uptobox<br>\ &quot;uptobox&quot;<br>38 / Webdav<br>\ &quot;webdav&quot;<br>39 / Yandex Disk<br>\ &quot;yandex&quot;<br>40 / Zoho<br>\ &quot;zoho&quot;<br>41 / http Connection<br>\ &quot;http&quot;<br>42 / premiumize.me<br>\ &quot;premiumizeme&quot;<br>43 / seafile<br>\ &quot;seafile&quot;<br>Storage&gt; 15<br></code></pre></td></tr></table></figure></li><li>client id 和client secret留空，直接空格跳过 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs text">Google Application Client Id<br>Setting your own is recommended.<br>See https://rclone.org/drive/#making-your-own-client-id for how to create your own.<br>If you leave this blank, it will use an internal key which is low performance.<br>Enter a string value. Press Enter for the default (&quot;&quot;).<br>client_id&gt; <br>OAuth Client Secret<br>Leave blank normally.<br>Enter a string value. Press Enter for the default (&quot;&quot;).<br>client_secret&gt; <br></code></pre></td></tr></table></figure></li><li>输入<code>1</code>，选择完全 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs text">Scope that rclone should use when requesting access from drive.<br>Enter a string value. Press Enter for the default (&quot;&quot;).<br>Choose a number from below, or type in your own value<br>1 / Full access all files, excluding Application Data Folder.<br>\ &quot;drive&quot;<br>2 / Read-only access to file metadata and file contents.<br>\ &quot;drive.readonly&quot;<br>/ Access to files created by rclone only.<br>3  These are visible in the drive website.<br> File authorization is revoked when the user deauthorizes the app.<br>\ &quot;drive.file&quot;<br>/ Allows read and write access to the Application Data folder.<br>4  This is not visible in the drive website.<br>\ &quot;drive.appfolder&quot;<br>/ Allows read-only access to file metadata but<br>5  does not allow any access to read or download file content.<br>\ &quot;drive.metadata.readonly&quot;<br>scope&gt; 1<br></code></pre></td></tr></table></figure></li><li>root_folder_id和service_account_file留空，直接空格跳过，然后advanced config输入<code>n</code> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs text">ID of the root folder<br>Leave blank normally.<br>Fill in to access &quot;Computers&quot; folders (see docs), or for rclone to use<br>a non root folder as its starting point.<br>Enter a string value. Press Enter for the default (&quot;&quot;).<br>root_folder_id&gt; <br>Service Account Credentials JSON file path <br>Leave blank normally.<br>Needed only if you want use SA instead of interactive login.<br>Leading `~` will be expanded in the file name as will environment variables such as `$&#123;RCLONE_CONFIG_DIR&#125;`.<br>Enter a string value. Press Enter for the default (&quot;&quot;).<br>service_account_file&gt; <br>Edit advanced config?<br>y) Yes<br>n) No (default)<br>y/n&gt; n<br></code></pre></td></tr></table></figure></li><li> auto config处也输入<code>n</code>，然后复制给出的网址，登录自己的Google账户，将返回的授权码填入</li><li> Configure this as a Shared Drive (Team Drive)?这里根据自己的需要来，输入<code>y</code>表示挂载团队盘，<code>n</code>表示直接挂载个人空间</li><li> 成功后，输入<code>y</code>来完成配置，然后输入<code>q</code>来退出操作。</li></ol><h2 id="挂载GD"><a href="#挂载GD" class="headerlink" title="挂载GD"></a>挂载GD</h2><p>下面要把 Google Drive 网盘挂载到云主机/Vps 上和设置开机自启，自动挂载 Google Drive 网盘</p><p>首先安装fuse:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt-get install fuse  <span class="hljs-comment">#debian</span><br><br>yum install fuse   <span class="hljs-comment">#centos</span><br></code></pre></td></tr></table></figure><p>新建一个你要挂载的目录，例如我要挂载到<code>/home/gdrive</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkdir -p /home/gdrive<br></code></pre></td></tr></table></figure><p>再执行挂载命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">rclone mount gd:movie /home/gdrive --allow-other --allow-non-empty --vfs-cache-mode writes<br></code></pre></td></tr></table></figure><p>这里<code>gd</code>是rclone里Google Drive的name；<code>movie</code>是Google Drive里要存放的子目录，留空则直接放根目录；<code>/home/gdrive</code>是VPS里的挂载目录</p><p>卸载Google Drive</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">fusermount -qzu /home/gdrive<br></code></pre></td></tr></table></figure><p>挂载只要几秒钟，但终端不会返回成功信息，关闭 SSH 重连即可。</p><p>重连后查看是否挂载成功：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">df -h<br></code></pre></td></tr></table></figure><p>有看到 gd，使用量和本地主机路径即成功挂载。</p><p>接下来设置开机自动挂载</p><p>新建一个/usr/systemd/system/rclone.service 文件，内容为：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs text">[Unit]<br>Description=rclone<br><br>[Service]<br>User=root<br>ExecStart=/usr/bin/rclone mount gd:movie /home/gdrive --allow-other --allow-non-empty --vfs-cache-mode writes<br>Restart=on-abort<br><br>[Install]<br>WantedBy=multi-user.target<br></code></pre></td></tr></table></figure><p>注意修改挂载命令为你主机的路径。</p><p>如果需要挂载多个网盘（比如我还要挂在一个OD），按上面的教程新运行个 Rclone 配置，再新建一个<code>/etc/systemd/system/rclone2.service</code> 文件</p><p>如果还有第三个，就以此类推</p><p>然后重载 daemon，让新的服务文件生效：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl daemon-reload<br></code></pre></td></tr></table></figure><p>用 systemctl 来启动 rclone</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl start rclone<br>systemctl start rclone2 <span class="hljs-comment">#如果有第二个网盘</span><br></code></pre></td></tr></table></figure><p>设置开机启动：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl <span class="hljs-built_in">enable</span> rclone<br></code></pre></td></tr></table></figure><p>停止、查看状态可以用：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl stop rclone<br>systemctl status rclone<br></code></pre></td></tr></table></figure><p>重启你的云主机/VPS:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">reboot<br></code></pre></td></tr></table></figure><p>重启后查看一下 rclone 的服务是否启动，GoogleDrive 是否正常挂载</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl status rclone<br>df -h<br></code></pre></td></tr></table></figure><p>OK ! 完成.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>rclone</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>dedipath openvz调教</title>
+    <link href="/2021/08/10/dedipath-openvz%E8%B0%83%E6%95%99/"/>
+    <url>/2021/08/10/dedipath-openvz%E8%B0%83%E6%95%99/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="开启-fuse"><a href="#开启-fuse" class="headerlink" title="开启 fuse"></a>开启 fuse</h1><p>发送技术工单</p><p>标题： <code>I need to open fuse support</code></p><p>内容： <code>The OpenVZ needs to backup data to remote cloud, need to use fuse support, please help me open it, thank you</code></p><p>客服回复很快，中午11点实测几分钟就好</p><h1 id="自动开启-TUN-TAP"><a href="#自动开启-TUN-TAP" class="headerlink" title="自动开启 TUN/TAP"></a>自动开启 TUN/TAP</h1><p>进入后台，点击manage [img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210810112427.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210810112427.png\[/img\]</a> 点击开启 [img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210810112743.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210810112743.png\[/img\]</a></p><h1 id="过滤筛选开机启动项目程序"><a href="#过滤筛选开机启动项目程序" class="headerlink" title="过滤筛选开机启动项目程序"></a>过滤筛选开机启动项目程序</h1><p>DP家的自带镜像有apache没鬼用占用端口Kill 关掉apache</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl list-unit-files --<span class="hljs-built_in">type</span>=service  grep enabled<br></code></pre></td></tr></table></figure><p>冒出一堆systemd找没用的KILL就可以</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl stop apache2.service<br>sudo systemctl <span class="hljs-built_in">disable</span> apache2.service<br></code></pre></td></tr></table></figure><h1 id="进入源改默认Debian源-进去后删除全文换这些默认源"><a href="#进入源改默认Debian源-进去后删除全文换这些默认源" class="headerlink" title="进入源改默认Debian源 进去后删除全文换这些默认源"></a>进入源改默认Debian源 进去后删除全文换这些默认源</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim /etc/apt/sources.list<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># deb http://deb.debian.org/debian buster main</span><br><br>deb http://deb.debian.org/debian buster main<br>deb-src http://deb.debian.org/debian buster main<br></code></pre></td></tr></table></figure><h1 id="开启-bbrplus"><a href="#开启-bbrplus" class="headerlink" title="开启 bbrplus"></a>开启 bbrplus</h1><ol><li>debian代码 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-debian-nocheckvirt.sh)<br></code></pre></td></tr></table></figure></li><li>centos代码 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -Ls https://github.com/mzz2017/lkl-haproxy/raw/master/lkl-haproxy-centos-nocheckvirt.sh)<br></code></pre></td></tr></table></figure><h1 id="BBR-OpenVZ版本"><a href="#BBR-OpenVZ版本" class="headerlink" title="BBR-OpenVZ版本"></a>BBR-OpenVZ版本</h1> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0-nocheckvirt/tcp_nanqinlang-rinetd-debianorubuntu-nocheckvirt-multiNIC.sh<br>bash tcp_nanqinlang-rinetd-debianorubuntu-nocheckvirt-multiNIC.sh<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>uncategorized</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>手把手教你搭建私人离线下载神器Aria2，搭配Rclone自动上传至网盘</title>
+    <link href="/2021/08/02/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BA%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8aria2%EF%BC%8C%E6%90%AD%E9%85%8Drclone%E8%87%AA%E5%8A%A8%E4%B8%8A/"/>
+    <url>/2021/08/02/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BA%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8aria2%EF%BC%8C%E6%90%AD%E9%85%8Drclone%E8%87%AA%E5%8A%A8%E4%B8%8A/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h3 id="原作者链接"><a href="#原作者链接" class="headerlink" title="原作者链接"></a><a href="https://blog.laoda.de/archives/aria2-rclone-filebrowser#toc-head-16">原作者链接</a></h3><h2 id="安装Aria2增强版"><a href="#安装Aria2增强版" class="headerlink" title="安装Aria2增强版"></a>安装Aria2增强版</h2><p>为了避免出错，安装下面的基础组件：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt install sudo wget curl ca-certificates<br></code></pre></td></tr></table></figure><p>运行安装脚本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -N git.io/aria2.sh &amp;&amp; chmod +x aria2.sh<br></code></pre></td></tr></table></figure><p>启动Aria2</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./aria2.sh<br></code></pre></td></tr></table></figure><p>配置Aria2</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">Aria2 一键安装管理脚本 增强版 [v2.7.4] by P3TERX.COM<br><br>  0. 升级脚本<br> ———————————————————————<br>  1. 安装 Aria2<br>  2. 更新 Aria2<br>  3. 卸载 Aria2<br> ———————————————————————<br>  4. 启动 Aria2<br>  5. 停止 Aria2<br>  6. 重启 Aria2<br> ———————————————————————<br>  7. 修改 配置<br>  8. 查看 配置<br>  9. 查看 日志<br> 10. 清空 日志<br> ———————————————————————<br> 11. 手动更新 BT-Tracker<br> 12. 自动更新 BT-Tracker<br> ———————————————————————<br><br> Aria2 状态: 已安装  已启动<br><br> 自动更新 BT-Tracker: 已开启<br><br> 请输入数字 [0-12]:<br></code></pre></td></tr></table></figure><h2 id="配置Rclone（以下来自twovps的教程整理）"><a href="#配置Rclone（以下来自twovps的教程整理）" class="headerlink" title="配置Rclone（以下来自twovps的教程整理）"></a>配置Rclone（以下来自twovps的教程整理）</h2><p>以下分为三小步这里做个简介：第一步是PC端获取网盘授权的令牌；第二步是在VPS里绑定获得的授权；第三步才是自动上传配置。因为OneDrive的授权需要在浏览器打开，而VPS没有图形界面，只能先在PC端获取授权，所以第一步和第二步有点重复。</p><h3 id="1、窗口（PC）端安装Rclone"><a href="#1、窗口（PC）端安装Rclone" class="headerlink" title="1、窗口（PC）端安装Rclone"></a>1、窗口（PC）端安装Rclone</h3><p>登录<a href="https://rclone.org/downloads/">rclone</a>网官下载Rclone的窗户端的客户。 [img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165214.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165214.png\[/img\]</a> 下载解压将里面的<code>rclone.exe</code>移动到本地<code>C:\Windows\System32</code>下这个目录，其它的可以删掉没关系 按<code>win + R</code>快捷键打开运行，输入<code>cmd</code>确定来打开CMD窗口，输入下面命令开始配置 。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">rclone config<br></code></pre></td></tr></table></figure><p>然后出现如下界面，提示按输入<code>n</code>回车创建个新的远程，然后提示输入name，名称随意但要记住，这里我填<code>eutaboo</code>。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Current remotes:<br><br>Name                 <span class="hljs-built_in">Type</span><br>====                 ====<br><br>e) Edit existing remote<br>n) New remote<br>d) Delete remote<br>r) <span class="hljs-built_in">Rename</span> remote<br>c) <span class="hljs-built_in">Copy</span> remote<br>s) <span class="hljs-built_in">Set</span> configuration password<br>q) Quit config<br>e/n/d/r/c/s/q&gt; n<br>name&gt; eutaboo<br></code></pre></td></tr></table></figure><p>回车后出现一长串网盘列表让你选，这里我们要绑定的是OneDrive， 其它网盘绑定教程我就不说了， 可以看到OneDrive是26，那就填入26回车，不同版本数字排序可能会变化，请自主确认，你也可以绑定列表中其它网盘。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">Type</span> of storage to configure.<br>Enter a string value. Press Enter <span class="hljs-keyword">for</span> the default (&quot;&quot;).<br>Choose a number from below, or <span class="hljs-built_in">type</span> <span class="hljs-keyword">in</span> your own value<br> <span class="hljs-number">1</span> / <span class="hljs-number">1</span>Fichier<br>   \ &quot;fichier&quot;<br> <span class="hljs-number">2</span> / Alias <span class="hljs-keyword">for</span> an existing remote<br>   \ &quot;alias&quot;<br> <span class="hljs-number">3</span> / Amazon Drive<br>   \ &quot;amazon cloud drive&quot;<br> <span class="hljs-number">4</span> / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, SeaweedFS, and Tencent COS<br>   \ &quot;s3&quot;<br> <span class="hljs-number">5</span> / Backblaze B2<br>   \ &quot;b2&quot;<br> <span class="hljs-number">6</span> / Box<br>   \ &quot;box&quot;<br> <span class="hljs-number">7</span> / Cache a remote<br>   \ &quot;cache&quot;<br> <span class="hljs-number">8</span> / Citrix Sharefile<br>   \ &quot;sharefile&quot;<br> <span class="hljs-number">9</span> / Compress a remote<br>   \ &quot;compress&quot;<br><span class="hljs-number">10</span> / Dropbox<br>   \ &quot;dropbox&quot;<br><span class="hljs-number">11</span> / Encrypt/Decrypt a remote<br>   \ &quot;crypt&quot;<br><span class="hljs-number">12</span> / Enterprise File Fabric<br>   \ &quot;filefabric&quot;<br><span class="hljs-number">13</span> / FTP Connection<br>   \ &quot;ftp&quot;<br><span class="hljs-number">14</span> / Google Cloud Storage (this is <span class="hljs-keyword">not</span> Google Drive)<br>   \ &quot;google cloud storage&quot;<br><span class="hljs-number">15</span> / Google Drive<br>   \ &quot;drive&quot;<br><span class="hljs-number">16</span> / Google Photos<br>   \ &quot;google photos&quot;<br><span class="hljs-number">17</span> / Hadoop distributed file system<br>   \ &quot;hdfs&quot;<br><span class="hljs-number">18</span> / Hubic<br>   \ &quot;hubic&quot;<br><span class="hljs-number">19</span> / <span class="hljs-keyword">In</span> memory object storage system.<br>   \ &quot;memory&quot;<br><span class="hljs-number">20</span> / Jottacloud<br>   \ &quot;jottacloud&quot;<br><span class="hljs-number">21</span> / Koofr<br>   \ &quot;koofr&quot;<br><span class="hljs-number">22</span> / Local Disk<br>   \ &quot;local&quot;<br><span class="hljs-number">23</span> / Mail.ru Cloud<br>   \ &quot;mailru&quot;<br><span class="hljs-number">24</span> / Mega<br>   \ &quot;mega&quot;<br><span class="hljs-number">25</span> / Microsoft Azure Blob Storage<br>   \ &quot;azureblob&quot;<br><span class="hljs-number">26</span> / Microsoft OneDrive<br>   \ &quot;onedrive&quot;<br><span class="hljs-number">27</span> / OpenDrive<br>   \ &quot;opendrive&quot;<br><span class="hljs-number">28</span> / OpenStack Swift (Rackspace Cloud Files, Memset Memstore, OVH)<br>   \ &quot;swift&quot;<br><span class="hljs-number">29</span> / Pcloud<br>   \ &quot;pcloud&quot;<br><span class="hljs-number">30</span> / Put.io<br>   \ &quot;putio&quot;<br><span class="hljs-number">31</span> / QingCloud Object Storage<br>   \ &quot;qingstor&quot;<br><span class="hljs-number">32</span> / SSH/SFTP Connection<br>   \ &quot;sftp&quot;<br><span class="hljs-number">33</span> / Sugarsync<br>   \ &quot;sugarsync&quot;<br><span class="hljs-number">34</span> / Tardigrade Decentralized Cloud Storage<br>   \ &quot;tardigrade&quot;<br><span class="hljs-number">35</span> / Transparently chunk/split large files<br>   \ &quot;chunker&quot;<br><span class="hljs-number">36</span> / Union merges the contents of several upstream <span class="hljs-built_in">fs</span><br>   \ &quot;union&quot;<br><span class="hljs-number">37</span> / Uptobox<br>   \ &quot;uptobox&quot;<br><span class="hljs-number">38</span> / Webdav<br>   \ &quot;webdav&quot;<br><span class="hljs-number">39</span> / Yandex Disk<br>   \ &quot;yandex&quot;<br><span class="hljs-number">40</span> / Zoho<br>   \ &quot;zoho&quot;<br><span class="hljs-number">41</span> / http Connection<br>   \ &quot;http&quot;<br><span class="hljs-number">42</span> / premiumize.me<br>   \ &quot;premiumizeme&quot;<br><span class="hljs-number">43</span> / seafile<br>   \ &quot;seafile&quot;<br>Storage&gt; <span class="hljs-number">26</span><br></code></pre></td></tr></table></figure><p>接着<code>client_id</code>和<code>client_secret</code>直接不填回车</p><p><code>Edit advanced config?</code>输入<code>n</code>回车</p><p><code>Already have a token - refresh?</code> 输入<code>y</code>回车，后面VPS里配置时是没有这个提示的，会出现下个自动配置选项，别手快直接y</p><p><code>Use auto config?</code>这里输入<code>y</code>回车，后面VPS配置时这步要选 n 具体操作如下：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Microsoft App Client Id<br>Leave blank normally.<br>Enter a string value. Press Enter <span class="hljs-keyword">for</span> the default (&quot;&quot;).<br>client_id&gt;<br>Microsoft App Client Secret<br>Leave blank normally.<br>Enter a string value. Press Enter <span class="hljs-keyword">for</span> the default (&quot;&quot;).<br>client_secret&gt;<br>Edit advanced config? (y/n) <br>y) Yes<br>n) No<br>y/n&gt; n<br>Remote config <br>Already have a token - refresh?  <br>y) Yes<br>n) No<br>y/n&gt; y<br>Use auto config?  <br> * Say Y <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> sure<br> * Say N <span class="hljs-keyword">if</span> you are working on a remote or headless machine<br>y) Yes<br>n) No<br>y/n&gt; y<br></code></pre></td></tr></table></figure><p>接着浏览器会自动弹出窗口，然后登录你要挂载的OneDrive账号，征求许可接受就行了 授权成功后返回cmd窗口出现以下界面，这里选<code>1</code>回车。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Choose a number from below, or <span class="hljs-built_in">type</span> <span class="hljs-keyword">in</span> an existing value<br> <span class="hljs-number">1</span> / OneDrive Personal or Business  #个人和商用<br>   \ &quot;onedrive&quot;<br> <span class="hljs-number">2</span> / Root Sharepoint site<br>   \ &quot;sharepoint&quot;<br> <span class="hljs-number">3</span> / <span class="hljs-built_in">Type</span> <span class="hljs-keyword">in</span> driveID<br>   \ &quot;driveid&quot;<br> <span class="hljs-number">4</span> / <span class="hljs-built_in">Type</span> <span class="hljs-keyword">in</span> SiteID<br>   \ &quot;siteid&quot;<br> <span class="hljs-number">5</span> / Search a Sharepoint site<br>   \ &quot;search&quot;<br>Your choice&gt;<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure><p>提示找到一个驱动器，让你选择，这里就一个选项 0，那就填入<code>0</code>回车，然后问你是否确定，选<code>y</code>回车。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Found <span class="hljs-number">1</span> drives, please select the one you want to use:<br><span class="hljs-number">0</span>: OneDrive (business) id=huioaeuiaeagioioieuiaaefe@#%gaege94#<br>Chose drive to use:&gt;<span class="hljs-number">0</span><br>Found drive &#x27;root&#x27; of <span class="hljs-built_in">type</span> &#x27;business&#x27;, URL:https://jxjjxy-my.sharepoint.com/personal/meeaghvp_t_odmail_cn/Documents<br>Is that okay?<br>y) Yes<br>n) No<br>y/n&gt; y<br></code></pre></td></tr></table></figure><p>接着会出现一串长令牌，PC端的操作全是为了这个令牌，将下图红框内的整个复制，复制范围<code>&#123;&quot;access_token&quot;:…………………………2019-04-21T16:41:25.1595637+08:00&quot;&#125;</code>保存好，以后就可以省了这步PC端操作，下面就回到SSH操作。</p><h3 id="2-、VPS安装Rclone"><a href="#2-、VPS安装Rclone" class="headerlink" title="2 、VPS安装Rclone"></a>2 、VPS安装Rclone</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl https://rclone.org/install.sh  sudo bash  <span class="hljs-comment">#安装Rclone</span><br>rclone config  <span class="hljs-comment">#配置Rclone</span><br></code></pre></td></tr></table></figure><p>上面输入完<code>rclone config</code>回车后的过程跟前面在PC端的配置步骤基本一样，这里就不复述了，到了<code>Use auto config?</code>问你是否使用自动配置这步不同，这里选<code>n</code> 回车，然后在出现的<code>result&gt;</code>后面粘贴上前面获得的token然后回车，接着会有几个确认，按提示填<code>y</code>就行，直到又回到下图配置开头界面，输入<code>q</code>回车退出配置即可，到此我们完成了网盘的授权。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">Name                 Type<br>====                 ====<br>onedrive             onedrive<br><br>e) Edit existing remote<br>n) New remote<br>d) Delete remote<br>r) Rename remote<br>c) Copy remote<br>s) Set configuration password<br>q) Quit config<br>e/n/d/r/c/s/q&gt; q<br></code></pre></td></tr></table></figure><blockquote><p>提示: 以上两步就是为了得到token，并在VPS里创建一个<code>rclone.conf</code>配置文件，该配置文件目录在<code>root/.config/rclone/rclone.conf</code>，可以将这个文件下载到本地，以后如果重装只要在VPS上安装好rclone，再将这个配置文件放进这个目录即可，省去繁琐配置过程。</p></blockquote><h3 id="3、自动上传设置"><a href="#3、自动上传设置" class="headerlink" title="3、自动上传设置"></a>3、自动上传设置</h3><p>因为挂载了其实最终的目的还是转移到自己的云盘空间中，vps 的硬盘能有多大，要折腾都是在云盘中。如果你是土豪当我没说。</p><p>这篇手记是解决后续利用 rclone 自动上传 aria2 下载的文件到 onedrive 或者 googledrive。到 aria2 的目录创建脚本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vi autoupload.sh<br></code></pre></td></tr></table></figure><p>脚本如下(作者：P3TERX，<a href="https://github.com/P3TERX/aria2.conf">Github页面地址</a>)：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-comment">#=================================================</span><br><span class="hljs-comment"># Description: Aria2 download completes calling Rclone upload</span><br><span class="hljs-comment"># Lisence: MIT</span><br><span class="hljs-comment"># Version: 1.8</span><br><span class="hljs-comment"># Author: P3TERX</span><br><span class="hljs-comment"># Blog: https://p3terx.com</span><br><span class="hljs-comment">#=================================================</span><br><br>downloadpath=<span class="hljs-string">&#x27;/usr/local/caddy/www/file&#x27;</span> <span class="hljs-comment">#Aria2下载目录</span><br>name=<span class="hljs-string">&#x27;remote&#x27;</span> <span class="hljs-comment">#配置Rclone时填写的name</span><br>folder=<span class="hljs-string">&#x27;/backup&#x27;</span> <span class="hljs-comment">#网盘里的文件夹，留空为整个网盘。</span><br>retry_num=3 <span class="hljs-comment">#上传失败重试次数</span><br><br><span class="hljs-comment">#=================下面不需要修改===================</span><br>filepath=<span class="hljs-variable">$3</span> <span class="hljs-comment">#Aria2传递给脚本的文件路径。BT下载有多个文件时该值为文件夹内第一个文件，如/root/Download/a/b/1.mp4</span><br>rdp=<span class="hljs-variable">$&#123;filepath#<span class="hljs-variable">$&#123;downloadpath&#125;</span>/&#125;</span> <span class="hljs-comment">#路径转换，去掉开头的下载路径。</span><br>path=<span class="hljs-variable">$&#123;downloadpath&#125;</span>/<span class="hljs-variable">$&#123;rdp%%/*&#125;</span> <span class="hljs-comment">#路径转换。下载文件夹时为顶层文件夹路径，普通单文件下载时与文件路径相同。</span><br><br><span class="hljs-function"><span class="hljs-title">Task_INFO</span></span>()&#123;<br><span class="hljs-built_in">echo</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;[\033[1;32mUPLOAD\033[0m] Task information:&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;————————– [\033[1;33mINFO\033[0m] ————————–&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[1;35mDownload path：\033[0m<span class="hljs-variable">$&#123;downloadpath&#125;</span>&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[1;35mFile path: \033[0m<span class="hljs-variable">$&#123;filepath&#125;</span>&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[1;35mUpload path: \033[0m<span class="hljs-variable">$&#123;uploadpath&#125;</span>&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[1;35mRemote path：\033[0m<span class="hljs-variable">$&#123;remotepath&#125;</span>&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;————————– [\033[1;33mINFO\033[0m] ————————–&quot;</span><br><span class="hljs-built_in">echo</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-title">Upload</span></span>()&#123;<br>retry=0<br><span class="hljs-keyword">while</span> [ <span class="hljs-variable">$retry</span> -le <span class="hljs-variable">$retry_num</span> -a -e <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;uploadpath&#125;</span>&quot;</span> ]; <span class="hljs-keyword">do</span><br>[ <span class="hljs-variable">$retry</span> != 0 ] &amp;&amp; <span class="hljs-built_in">echo</span> &amp;&amp; <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;Upload failed! Retry <span class="hljs-variable">$&#123;retry&#125;</span>/<span class="hljs-variable">$&#123;retry_num&#125;</span> …&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span><br>rclone move -v <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;uploadpath&#125;</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;remotepath&#125;</span>&quot;</span><br>rclone rmdirs -v <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;downloadpath&#125;</span>&quot;</span> –leave-root<br>retry=$((<span class="hljs-variable">$retry</span>+<span class="hljs-number">1</span>))<br><span class="hljs-keyword">done</span><br>[ -e <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;uploadpath&#125;</span>&quot;</span> ] &amp;&amp; <span class="hljs-built_in">echo</span> &amp;&amp; <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;Upload failed: <span class="hljs-variable">$&#123;uploadpath&#125;</span>&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span><br>[ -e <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;path&#125;</span>&quot;</span>.aria2 ] &amp;&amp; rm -vf <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;path&#125;</span>&quot;</span>.aria2<br>[ -e <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;filepath&#125;</span>&quot;</span>.aria2 ] &amp;&amp; rm -vf <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;filepath&#125;</span>&quot;</span>.aria2<br>&#125;<br><br><span class="hljs-keyword">if</span> [ <span class="hljs-variable">$2</span> -eq 0 ]<br><span class="hljs-keyword">then</span><br><span class="hljs-built_in">exit</span> 0<br><span class="hljs-keyword">fi</span><br><br><span class="hljs-built_in">echo</span> &amp;&amp; <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot; \033[1;33mU P L O A D ! ! !\033[0m&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span><br><span class="hljs-built_in">echo</span> &amp;&amp; <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot; \033[1;32mU P L O A D ! ! !\033[0m&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span><br><span class="hljs-built_in">echo</span> &amp;&amp; <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot; \033[1;35mU P L O A D ! ! !\033[0m&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span><br><br><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$path</span>&quot;</span> = <span class="hljs-string">&quot;<span class="hljs-variable">$filepath</span>&quot;</span> ] &amp;&amp; [ <span class="hljs-variable">$2</span> -eq 1 ] <span class="hljs-comment">#普通单文件下载，移动文件到设定的网盘文件夹。</span><br><span class="hljs-keyword">then</span><br>uploadpath=<span class="hljs-variable">$&#123;filepath&#125;</span><br>remotepath=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;name&#125;</span>:<span class="hljs-variable">$&#123;folder&#125;</span>&quot;</span><br>Task_INFO<br>Upload<br><span class="hljs-built_in">exit</span> 0<br><span class="hljs-keyword">elif</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$path</span>&quot;</span> != <span class="hljs-string">&quot;<span class="hljs-variable">$filepath</span>&quot;</span> ] &amp;&amp; [ <span class="hljs-variable">$2</span> -gt 1 ] <span class="hljs-comment">#BT下载（文件夹内文件数大于1），移动整个文件夹到设定的网盘文件夹。</span><br><span class="hljs-keyword">then</span><br>uploadpath=<span class="hljs-variable">$&#123;path&#125;</span><br>remotepath=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;name&#125;</span>:<span class="hljs-variable">$&#123;folder&#125;</span>/<span class="hljs-variable">$&#123;rdp%%/*&#125;</span>&quot;</span><br>Task_INFO<br>Upload<br><span class="hljs-built_in">exit</span> 0<br><span class="hljs-keyword">elif</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$path</span>&quot;</span> != <span class="hljs-string">&quot;<span class="hljs-variable">$filepath</span>&quot;</span> ] &amp;&amp; [ <span class="hljs-variable">$2</span> -eq 1 ] <span class="hljs-comment">#第三方度盘工具下载（子文件夹或多级目录等情况下的单文件下载）、BT下载（文件夹内文件数等于1），移动文件到设定的网盘文件夹下的相同路径文件夹。</span><br><span class="hljs-keyword">then</span><br>uploadpath=<span class="hljs-variable">$&#123;filepath&#125;</span><br>remotepath=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;name&#125;</span>:<span class="hljs-variable">$&#123;folder&#125;</span>/<span class="hljs-variable">$&#123;rdp%/*&#125;</span>&quot;</span><br>Task_INFO<br>Upload<br><span class="hljs-built_in">exit</span> 0<br><span class="hljs-keyword">fi</span><br>Task_INFO<br></code></pre></td></tr></table></figure><p>需要修改的地方只有这三行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">downloadpath=<span class="hljs-string">&#x27;/usr/local/caddy/www/file&#x27;</span> <span class="hljs-comment">#Aria2下载目录</span><br>name=<span class="hljs-string">&#x27;remote&#x27;</span> <span class="hljs-comment">#配置Rclone时填写的name</span><br>folder=<span class="hljs-string">&#x27;/backup&#x27;</span> <span class="hljs-comment">#网盘里的文件夹，留空为整个网盘。</span><br></code></pre></td></tr></table></figure><p><code>/usr/local/caddy/www/file</code> 这个对应你aria2的下载目录（比如用我们的的增强脚本就是<code>/root/downloads</code>），<code>remote</code> 对应你配置rclone的时候设置的名称，<code>/backup</code> 对应你想同步上传到你网盘的哪个目录，如果留空就是根目录（如果没有这个目录，会自动创建）。 修改完毕后，给这个脚本执行权限：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bsah">chmod +x autoupload.sh<br></code></pre></td></tr></table></figure><p>然后编辑aria2的配置文件（位置在<code>/root/.aria2c</code>），找到<code>on-download-complete</code>，修改内容为这句：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 调用 rclone 上传(move)到网盘</span><br>on-download-complete=/root/.aria2c/autoupload.sh<br></code></pre></td></tr></table></figure><p>这就是利用rclone的on-download-complete自动上传aria2下载好的文件。</p><p>重新启动aria2：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/etc/init.d/aria2 restart<br></code></pre></td></tr></table></figure><p>重启Aria2使配置文件生效，这样就大功告成了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>aria2</tag>
+      
+      <tag>rclone</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>常用的一键脚本</title>
+    <link href="/2021/07/30/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/"/>
+    <url>/2021/07/30/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="VPS测试"><a href="#VPS测试" class="headerlink" title="VPS测试"></a>VPS测试</h2><h3 id="UnixBench"><a href="#UnixBench" class="headerlink" title="UnixBench"></a>UnixBench</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh &amp;&amp; chmod +x unixbench.sh &amp;&amp; ./unixbench.sh<br></code></pre></td></tr></table></figure><h3 id="SuperBench"><a href="#SuperBench" class="headerlink" title="SuperBench"></a>SuperBench</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh  bash<br></code></pre></td></tr></table></figure><h3 id="LemonBenchIntl"><a href="#LemonBenchIntl" class="headerlink" title="LemonBenchIntl"></a>LemonBenchIntl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -fsL https://ilemonra.in/LemonBenchIntl  bash -s fast<br></code></pre></td></tr></table></figure><h3 id="SuperSpeed"><a href="#SuperSpeed" class="headerlink" title="SuperSpeed"></a>SuperSpeed</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -Lso- https://git.io/superspeed)<br></code></pre></td></tr></table></figure><h3 id="全部流媒体解锁测试"><a href="#全部流媒体解锁测试" class="headerlink" title="全部流媒体解锁测试"></a>全部流媒体解锁测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)<br></code></pre></td></tr></table></figure><h3 id="NetFlix解锁测试"><a href="#NetFlix解锁测试" class="headerlink" title="NetFlix解锁测试"></a>NetFlix解锁测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.6/nf_2.6_linux_amd64 &amp;&amp; chmod +x nf &amp;&amp; clear &amp;&amp; ./nf<br></code></pre></td></tr></table></figure><h3 id="DisneyPlus解锁测试"><a href="#DisneyPlus解锁测试" class="headerlink" title="DisneyPlus解锁测试"></a>DisneyPlus解锁测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -O dp https://github.com/sjlleo/VerifyDisneyPlus/releases/download/1.01/dp_1.01_linux_amd64 &amp;&amp; chmod +x dp &amp;&amp; clear &amp;&amp; ./dp<br></code></pre></td></tr></table></figure><h3 id="一键WARP解锁"><a href="#一键WARP解锁" class="headerlink" title="一键WARP解锁"></a>一键WARP解锁</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -fsSL git.io/warp.sh) d<br></code></pre></td></tr></table></figure><h2 id="功能脚本"><a href="#功能脚本" class="headerlink" title="功能脚本"></a>功能脚本</h2><h3 id="Linux更换内核"><a href="#Linux更换内核" class="headerlink" title="Linux更换内核"></a>Linux更换内核</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -N --no-check-certificate https://github.000060000.xyz/tcp.sh &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh<br></code></pre></td></tr></table></figure><h3 id="Xray安装脚本"><a href="#Xray安装脚本" class="headerlink" title="Xray安装脚本"></a>Xray安装脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -P /root -N --no-check-certificate https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh<br></code></pre></td></tr></table></figure><h3 id="安装Brook"><a href="#安装Brook" class="headerlink" title="安装Brook"></a>安装Brook</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -L https://github.com/txthinking/brook/releases/download/v20210701/brook_Linux_amd64 -o /usr/bin/brook &amp;&amp; chmod +x /usr/bin/brook<br></code></pre></td></tr></table></figure><p>使用</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nohup brook relay -f :1111 -t 1.2.3.4:2222 &gt; /dev/null 2&gt;&amp;1 &amp;<br></code></pre></td></tr></table></figure><h3 id="哪吒探针安装"><a href="#哪吒探针安装" class="headerlink" title="哪吒探针安装"></a>哪吒探针安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh  -o nezha.sh &amp;&amp; chmod +x nezha.sh<br>sudo ./nezha.sh<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Netflix和DisneyPlus检测脚本</title>
+    <link href="/2021/07/16/netflix%E5%92%8Cdisneyplus%E6%A3%80%E6%B5%8B%E8%84%9A%E6%9C%AC/"/>
+    <url>/2021/07/16/netflix%E5%92%8Cdisneyplus%E6%A3%80%E6%B5%8B%E8%84%9A%E6%9C%AC/</url>
+    
+    <content type="html"><![CDATA[<p>[toc] 2021/7/19更新</p><h3 id="全部流媒体解锁测试"><a href="#全部流媒体解锁测试" class="headerlink" title="全部流媒体解锁测试"></a>全部流媒体解锁测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)<br></code></pre></td></tr></table></figure><h3 id="Netflix"><a href="#Netflix" class="headerlink" title="Netflix"></a>Netflix</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.6/nf_2.6_linux_amd64 &amp;&amp; chmod +x nf &amp;&amp; clear &amp;&amp; ./nf<br></code></pre></td></tr></table></figure><h4 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h4><ol><li> 简介模式：<code>./nf -method lite</code>或<code>./nf</code></li><li> 完整模式：<code>.nf -method full</code></li></ol><h3 id="DisneyPlus"><a href="#DisneyPlus" class="headerlink" title="DisneyPlus"></a>DisneyPlus</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -O dp https://github.com/sjlleo/VerifyDisneyPlus/releases/download/1.01/dp_1.01_linux_amd64 &amp;&amp; chmod +x dp &amp;&amp; clear &amp;&amp; ./dp<br></code></pre></td></tr></table></figure><h4 id="用法：-dp"><a href="#用法：-dp" class="headerlink" title="用法：./dp"></a>用法：<code>./dp</code></h4>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>disneyplus</tag>
+      
+      <tag>netflix</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>win已激活却提示产品密钥即将过期</title>
+    <link href="/2021/07/14/win%E5%B7%B2%E6%BF%80%E6%B4%BB%E5%8D%B4%E6%8F%90%E7%A4%BA%E4%BA%A7%E5%93%81%E5%AF%86%E9%92%A5%E5%8D%B3%E5%B0%86%E8%BF%87%E6%9C%9F/"/>
+    <url>/2021/07/14/win%E5%B7%B2%E6%BF%80%E6%B4%BB%E5%8D%B4%E6%8F%90%E7%A4%BA%E4%BA%A7%E5%93%81%E5%AF%86%E9%92%A5%E5%8D%B3%E5%B0%86%E8%BF%87%E6%9C%9F/</url>
+    
+    <content type="html"><![CDATA[<h3 id="当出现设置里显示你的windows已经激活但弹窗说你的Windows许可证即将过期时，这说明你的是用KMS等方式激活的，不是永久密钥。验证是否为永久密钥可以用以下命令"><a href="#当出现设置里显示你的windows已经激活但弹窗说你的Windows许可证即将过期时，这说明你的是用KMS等方式激活的，不是永久密钥。验证是否为永久密钥可以用以下命令" class="headerlink" title="当出现设置里显示你的windows已经激活但弹窗说你的Windows许可证即将过期时，这说明你的是用KMS等方式激活的，不是永久密钥。验证是否为永久密钥可以用以下命令"></a>当出现设置里显示你的windows已经激活但弹窗说你的Windows许可证即将过期时，这说明你的是用KMS等方式激活的，不是永久密钥。验证是否为永久密钥可以用以下命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">slmgr -xpr<br></code></pre></td></tr></table></figure><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165100.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165100.png\[/img\]</a></p><h3 id="只有出现如下所示的图片时，才是永久激活，若是“批量激活将于XXX到期”，说明是用KMS等方式激活的。"><a href="#只有出现如下所示的图片时，才是永久激活，若是“批量激活将于XXX到期”，说明是用KMS等方式激活的。" class="headerlink" title="只有出现如下所示的图片时，才是永久激活，若是“批量激活将于XXX到期”，说明是用KMS等方式激活的。"></a>只有出现如下所示的图片时，才是永久激活，若是“批量激活将于XXX到期”，说明是用KMS等方式激活的。</h3><h3 id="注：以下解决办法仅支持之前有永久密钥，后来因为换专业版等自己用KMS激活后找不到以前密钥的情况。"><a href="#注：以下解决办法仅支持之前有永久密钥，后来因为换专业版等自己用KMS激活后找不到以前密钥的情况。" class="headerlink" title="注：以下解决办法仅支持之前有永久密钥，后来因为换专业版等自己用KMS激活后找不到以前密钥的情况。"></a>注：以下解决办法仅支持之前有永久密钥，后来因为换专业版等自己用KMS激活后找不到以前密钥的情况。</h3><h3 id="管理员运行PowerShell，然后执行以下命令"><a href="#管理员运行PowerShell，然后执行以下命令" class="headerlink" title="管理员运行PowerShell，然后执行以下命令"></a>管理员运行PowerShell，然后执行以下命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">(Get-WmiObject -query <span class="hljs-string">&#x27;select * from SoftwareLicensingService&#x27;</span>).OA3xOriginalProductKey<br></code></pre></td></tr></table></figure><h3 id="将返回的密钥在设置中点击更改密钥替换，即可永久激活。"><a href="#将返回的密钥在设置中点击更改密钥替换，即可永久激活。" class="headerlink" title="将返回的密钥在设置中点击更改密钥替换，即可永久激活。"></a>将返回的密钥在设置中点击更改密钥替换，即可永久激活。</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+      <category>电脑问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>win激活</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>OneDrive+OneManager搭建分享网盘</title>
+    <link href="/2021/07/13/onedriveonemanager%E6%90%AD%E5%BB%BA%E5%88%86%E4%BA%AB%E7%BD%91%E7%9B%98/"/>
+    <url>/2021/07/13/onedriveonemanager%E6%90%AD%E5%BB%BA%E5%88%86%E4%BA%AB%E7%BD%91%E7%9B%98/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol><li> 域名（我放到了CloudFare下）</li><li> VPS（我用的CloudCone双11版）</li><li> OneDrive账号</li></ol><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ol><li>在CloudFare里将域名解析好</li><li>在宝塔上添加网站，根据OneManager的.htaccess内nginx后内容配置伪静态</li><li>将OneManager源码放到网站根目录下 [github]503611908/OneManager-php[/github]</li><li>打开网站，按照指引安装</li><li>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165308.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165308.png\[/img\]</a> 如上图所示，选择OneDrive，然后添加盘</li><li>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165351.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165351.png\[/img\]</a> 填写好标签和显示名称后，点击“申请应用ID与机密”</li><li>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165421.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165421.png\[/img\]</a> 点击新注册 [img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165448.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165448.png\[/img\]</a> 名称随便填，然后选择“任何组织目录(任何 Azure AD 目录 - 多租户)中的帐户和个人 Microsoft 帐户(例如，Skype、Xbox) ”，url填写<code>https://scfonedrive.github.io/</code>，将生成的客户端ID保存</li><li>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165510.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165510.png\[/img\]</a> 点击证书与密码-&gt;新客户端密码，说明随便填，时间选24个月，将生成的值保存。注意！！！这里如果不保存，后面就不显示了</li><li>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165532.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165532.png\[/img\]</a> 点击API权限，添加权限-&gt;Microsoft Graph-&gt;委托的权限，搜索 <code>Files.ReadWrite.All</code>并添加</li><li>返回OneManager，将客户端id和值填入，点确认即可</li></ol><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>若安装时点验证伪静态出现201弹窗报错，说明是伪静态没有设置好。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>OneDrive</tag>
+      
+      <tag>OneManager</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>人为什么会自卑</title>
+    <link href="/2021/06/27/%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E8%87%AA%E5%8D%91/"/>
+    <url>/2021/06/27/%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E8%87%AA%E5%8D%91/</url>
+    
+    <content type="html"><![CDATA[<h2 id="不知为什么，在大学会感到如此自卑"><a href="#不知为什么，在大学会感到如此自卑" class="headerlink" title="不知为什么，在大学会感到如此自卑"></a>不知为什么，在大学会感到如此自卑</h2><h2 id="与同学交流时，总会感觉到低人一等"><a href="#与同学交流时，总会感觉到低人一等" class="headerlink" title="与同学交流时，总会感觉到低人一等"></a>与同学交流时，总会感觉到低人一等</h2><h2 id="为什么呢？明明当时的高考算上加分我算是威海校区的前几名了，但我在大学四年却一直处于极度的自卑之下"><a href="#为什么呢？明明当时的高考算上加分我算是威海校区的前几名了，但我在大学四年却一直处于极度的自卑之下" class="headerlink" title="为什么呢？明明当时的高考算上加分我算是威海校区的前几名了，但我在大学四年却一直处于极度的自卑之下"></a>为什么呢？明明当时的高考算上加分我算是威海校区的前几名了，但我在大学四年却一直处于极度的自卑之下</h2><h2 id="或许，这是因为，在大学中，我并没有努力"><a href="#或许，这是因为，在大学中，我并没有努力" class="headerlink" title="或许，这是因为，在大学中，我并没有努力"></a>或许，这是因为，在大学中，我并没有努力</h2><h2 id="虽然高中的优秀让我有了谈资，但是大学的颓废，让我处于工大的最底层"><a href="#虽然高中的优秀让我有了谈资，但是大学的颓废，让我处于工大的最底层" class="headerlink" title="虽然高中的优秀让我有了谈资，但是大学的颓废，让我处于工大的最底层"></a>虽然高中的优秀让我有了谈资，但是大学的颓废，让我处于工大的最底层</h2><h2 id="在毕业设计中，我也不知道究竟是我的能力有限还是老师问题，我总是存在这个那个的问题，老师也总说我没有进入到毕设状态"><a href="#在毕业设计中，我也不知道究竟是我的能力有限还是老师问题，我总是存在这个那个的问题，老师也总说我没有进入到毕设状态" class="headerlink" title="在毕业设计中，我也不知道究竟是我的能力有限还是老师问题，我总是存在这个那个的问题，老师也总说我没有进入到毕设状态"></a>在毕业设计中，我也不知道究竟是我的能力有限还是老师问题，我总是存在这个那个的问题，老师也总说我没有进入到毕设状态</h2><h2 id="在舍友关系处理中，我总是需要好好的收敛自己，因为我怕我万一解放真正本性，会使我在四年一个朋友都没有"><a href="#在舍友关系处理中，我总是需要好好的收敛自己，因为我怕我万一解放真正本性，会使我在四年一个朋友都没有" class="headerlink" title="在舍友关系处理中，我总是需要好好的收敛自己，因为我怕我万一解放真正本性，会使我在四年一个朋友都没有"></a>在舍友关系处理中，我总是需要好好的收敛自己，因为我怕我万一解放真正本性，会使我在四年一个朋友都没有</h2><h2 id="我总是感觉，一切都是如此之累。舍友的玩闹，我虽然厌烦不已，但也只能装作没有感觉；舍友对我的侮辱，我也时常借着带着耳机听不见而逃避"><a href="#我总是感觉，一切都是如此之累。舍友的玩闹，我虽然厌烦不已，但也只能装作没有感觉；舍友对我的侮辱，我也时常借着带着耳机听不见而逃避" class="headerlink" title="我总是感觉，一切都是如此之累。舍友的玩闹，我虽然厌烦不已，但也只能装作没有感觉；舍友对我的侮辱，我也时常借着带着耳机听不见而逃避"></a>我总是感觉，一切都是如此之累。舍友的玩闹，我虽然厌烦不已，但也只能装作没有感觉；舍友对我的侮辱，我也时常借着带着耳机听不见而逃避</h2><h2 id="今天终于算是毕业了，但是最后一次走在校园的路上，与舍友的分别，我的心灵没有任何感觉，就像是到点吃饭到点睡觉一样，别人会感觉到的感伤与不舍，我却一点都没有。"><a href="#今天终于算是毕业了，但是最后一次走在校园的路上，与舍友的分别，我的心灵没有任何感觉，就像是到点吃饭到点睡觉一样，别人会感觉到的感伤与不舍，我却一点都没有。" class="headerlink" title="今天终于算是毕业了，但是最后一次走在校园的路上，与舍友的分别，我的心灵没有任何感觉，就像是到点吃饭到点睡觉一样，别人会感觉到的感伤与不舍，我却一点都没有。"></a>今天终于算是毕业了，但是最后一次走在校园的路上，与舍友的分别，我的心灵没有任何感觉，就像是到点吃饭到点睡觉一样，别人会感觉到的感伤与不舍，我却一点都没有。</h2><h2 id="我也不知道我是一个感情淡漠的人，还是真的对大学的东西没有较深的感情，总是感觉，我仿佛只是一个外来人，所有一切，皆与我无关。"><a href="#我也不知道我是一个感情淡漠的人，还是真的对大学的东西没有较深的感情，总是感觉，我仿佛只是一个外来人，所有一切，皆与我无关。" class="headerlink" title="我也不知道我是一个感情淡漠的人，还是真的对大学的东西没有较深的感情，总是感觉，我仿佛只是一个外来人，所有一切，皆与我无关。"></a>我也不知道我是一个感情淡漠的人，还是真的对大学的东西没有较深的感情，总是感觉，我仿佛只是一个外来人，所有一切，皆与我无关。</h2><h2 id="我总是耐不下性子，对舍友、对异性、对朋友，所有人只要我开始的兴趣没有了，那他们对我仿佛累赘，一言一行都仿佛是对我的一种折磨，一种枷锁。"><a href="#我总是耐不下性子，对舍友、对异性、对朋友，所有人只要我开始的兴趣没有了，那他们对我仿佛累赘，一言一行都仿佛是对我的一种折磨，一种枷锁。" class="headerlink" title="我总是耐不下性子，对舍友、对异性、对朋友，所有人只要我开始的兴趣没有了，那他们对我仿佛累赘，一言一行都仿佛是对我的一种折磨，一种枷锁。"></a>我总是耐不下性子，对舍友、对异性、对朋友，所有人只要我开始的兴趣没有了，那他们对我仿佛累赘，一言一行都仿佛是对我的一种折磨，一种枷锁。</h2><h2 id="偶然间，一次吃饭与另两个舍友交谈得知一个舍友对我们之一的一个人感觉到厌烦，认为是“傻逼”，我其实已经可以知道那就是我了，但后续的处理，我也只能当作我什么也不知道，装作是一个傻瓜。或许，我还有一丝侥幸，但最后临离别时，他知道另两个人也玩微博，我却不玩，并极力劝阻我不要玩时，最后的一丝侥幸也消散如烟。我竟然在不知不觉中，成为了让舍友讨厌的人！"><a href="#偶然间，一次吃饭与另两个舍友交谈得知一个舍友对我们之一的一个人感觉到厌烦，认为是“傻逼”，我其实已经可以知道那就是我了，但后续的处理，我也只能当作我什么也不知道，装作是一个傻瓜。或许，我还有一丝侥幸，但最后临离别时，他知道另两个人也玩微博，我却不玩，并极力劝阻我不要玩时，最后的一丝侥幸也消散如烟。我竟然在不知不觉中，成为了让舍友讨厌的人！" class="headerlink" title="偶然间，一次吃饭与另两个舍友交谈得知一个舍友对我们之一的一个人感觉到厌烦，认为是“傻逼”，我其实已经可以知道那就是我了，但后续的处理，我也只能当作我什么也不知道，装作是一个傻瓜。或许，我还有一丝侥幸，但最后临离别时，他知道另两个人也玩微博，我却不玩，并极力劝阻我不要玩时，最后的一丝侥幸也消散如烟。我竟然在不知不觉中，成为了让舍友讨厌的人！"></a>偶然间，一次吃饭与另两个舍友交谈得知一个舍友对我们之一的一个人感觉到厌烦，认为是“傻逼”，我其实已经可以知道那就是我了，但后续的处理，我也只能当作我什么也不知道，装作是一个傻瓜。或许，我还有一丝侥幸，但最后临离别时，他知道另两个人也玩微博，我却不玩，并极力劝阻我不要玩时，最后的一丝侥幸也消散如烟。我竟然在不知不觉中，成为了让舍友讨厌的人！</h2><h2 id="这让我之后的相处，其实一直处于一种矛盾的心理。我的两个小人，一个劝说我永远不要理他了，一个劝说我假装没有发生，继续好好相处。我还是软弱的，采取了后面小人的建议。但是，我每次对其他舍友的举动，都明显可以感觉出这个舍友的厌烦。所以这让我十分难受。"><a href="#这让我之后的相处，其实一直处于一种矛盾的心理。我的两个小人，一个劝说我永远不要理他了，一个劝说我假装没有发生，继续好好相处。我还是软弱的，采取了后面小人的建议。但是，我每次对其他舍友的举动，都明显可以感觉出这个舍友的厌烦。所以这让我十分难受。" class="headerlink" title="这让我之后的相处，其实一直处于一种矛盾的心理。我的两个小人，一个劝说我永远不要理他了，一个劝说我假装没有发生，继续好好相处。我还是软弱的，采取了后面小人的建议。但是，我每次对其他舍友的举动，都明显可以感觉出这个舍友的厌烦。所以这让我十分难受。"></a>这让我之后的相处，其实一直处于一种矛盾的心理。我的两个小人，一个劝说我永远不要理他了，一个劝说我假装没有发生，继续好好相处。我还是软弱的，采取了后面小人的建议。但是，我每次对其他舍友的举动，都明显可以感觉出这个舍友的厌烦。所以这让我十分难受。</h2><h2 id="或许现在唯一的安慰是我已经毕业了，以后如果机会少，我们可以算是永别了。因为这个原因，也可能是导致我对所有舍友先走以后毫无感想，甚至麻木，毕设的难受使我对学校也没有任何眷恋。对我来说，我来到这里，仿佛只是命运让我来这里受刑一样，如今刑满，亦可感到一丝解放般的轻松。"><a href="#或许现在唯一的安慰是我已经毕业了，以后如果机会少，我们可以算是永别了。因为这个原因，也可能是导致我对所有舍友先走以后毫无感想，甚至麻木，毕设的难受使我对学校也没有任何眷恋。对我来说，我来到这里，仿佛只是命运让我来这里受刑一样，如今刑满，亦可感到一丝解放般的轻松。" class="headerlink" title="或许现在唯一的安慰是我已经毕业了，以后如果机会少，我们可以算是永别了。因为这个原因，也可能是导致我对所有舍友先走以后毫无感想，甚至麻木，毕设的难受使我对学校也没有任何眷恋。对我来说，我来到这里，仿佛只是命运让我来这里受刑一样，如今刑满，亦可感到一丝解放般的轻松。"></a>或许现在唯一的安慰是我已经毕业了，以后如果机会少，我们可以算是永别了。因为这个原因，也可能是导致我对所有舍友先走以后毫无感想，甚至麻木，毕设的难受使我对学校也没有任何眷恋。对我来说，我来到这里，仿佛只是命运让我来这里受刑一样，如今刑满，亦可感到一丝解放般的轻松。</h2><h2 id="总之，写了这么多，或许只是对大学四年废物的自己的怨恨，想找些借口，得到一丝解脱。希望以后日子会变得更好。"><a href="#总之，写了这么多，或许只是对大学四年废物的自己的怨恨，想找些借口，得到一丝解脱。希望以后日子会变得更好。" class="headerlink" title="总之，写了这么多，或许只是对大学四年废物的自己的怨恨，想找些借口，得到一丝解脱。希望以后日子会变得更好。"></a>总之，写了这么多，或许只是对大学四年废物的自己的怨恨，想找些借口，得到一丝解脱。希望以后日子会变得更好。</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>我</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>v2ray报错</title>
+    <link href="/2021/06/04/v2ray%E6%8A%A5%E9%94%99/"/>
+    <url>/2021/06/04/v2ray%E6%8A%A5%E9%94%99/</url>
+    
+    <content type="html"><![CDATA[<h1 id="报错内容"><a href="#报错内容" class="headerlink" title="报错内容"></a>报错内容</h1><p>[warning][1361113036] app/proxyman/outbound: failed to process outbound traffic &gt; proxy/vless/outbound: failed to find an available destination &gt; common/retry: [dial tcp 104.167.247.144:443: i/o timeout dial tcp 104.167.247.144:443: operation was canceled dial tcp: operation was canceled] &gt; common/retry: all retry attempts failed[/warning]</p><h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><h3 id="ip被封了端口，换个端口可以解决问题"><a href="#ip被封了端口，换个端口可以解决问题" class="headerlink" title="ip被封了端口，换个端口可以解决问题"></a>ip被封了端口，换个端口可以解决问题</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ip</tag>
+      
+      <tag>V2Ray</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>两款检查ip是否被墙的网址</title>
+    <link href="/2021/06/04/%E4%B8%A4%E6%AC%BE%E6%A3%80%E6%9F%A5ip%E6%98%AF%E5%90%A6%E8%A2%AB%E5%A2%99%E7%9A%84%E7%BD%91%E5%9D%80/"/>
+    <url>/2021/06/04/%E4%B8%A4%E6%AC%BE%E6%A3%80%E6%9F%A5ip%E6%98%AF%E5%90%A6%E8%A2%AB%E5%A2%99%E7%9A%84%E7%BD%91%E5%9D%80/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="https-www-toolsdaquan-com-ipcheck"><a href="#https-www-toolsdaquan-com-ipcheck" class="headerlink" title="https://www.toolsdaquan.com/ipcheck/"></a><a href="https://www.toolsdaquan.com/ipcheck/">https://www.toolsdaquan.com/ipcheck/</a></h1><h1 id="https-ping-pe"><a href="#https-ping-pe" class="headerlink" title="https://ping.pe/"></a><a href="https://ping.pe/">https://ping.pe/</a></h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ip</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>pycharm无法导入statsmodels</title>
+    <link href="/2021/05/30/pycharm%E6%97%A0%E6%B3%95%E5%AF%BC%E5%85%A5statsmodels/"/>
+    <url>/2021/05/30/pycharm%E6%97%A0%E6%B3%95%E5%AF%BC%E5%85%A5statsmodels/</url>
+    
+    <content type="html"><![CDATA[<h2 id="首先安装cython，然后再安装statsmodels即可成功安装"><a href="#首先安装cython，然后再安装statsmodels即可成功安装" class="headerlink" title="首先安装cython，然后再安装statsmodels即可成功安装"></a>首先安装cython，然后再安装statsmodels即可成功安装</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Sakurairo主题添加github卡片功能</title>
+    <link href="/2021/05/20/sakurairo%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0github%E5%8D%A1%E7%89%87%E5%8A%9F%E8%83%BD/"/>
+    <url>/2021/05/20/sakurairo%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0github%E5%8D%A1%E7%89%87%E5%8A%9F%E8%83%BD/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="在主题的function-php处加入以下短代码"><a href="#在主题的function-php处加入以下短代码" class="headerlink" title="在主题的function.php处加入以下短代码"></a>在主题的function.php处加入以下短代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">github</span>(<span class="hljs-params"><span class="hljs-variable">$atts</span>,<span class="hljs-variable">$content</span>=<span class="hljs-literal">null</span>,<span class="hljs-variable">$code</span>=<span class="hljs-string">&quot;&quot;</span></span>)</span>&#123;<br>    <span class="hljs-variable">$return</span> = <span class="hljs-string">&#x27;&lt;iframe frameborder=&quot;0&quot; scrolling=&quot;0&quot; allowtransparency=&quot;true&quot; src=&quot;https://api.2heng.xin/github-card/?repo=&#x27;</span>;<br>    <span class="hljs-variable">$return</span> .= <span class="hljs-variable">$content</span>;<br>    <span class="hljs-variable">$return</span> .= <span class="hljs-string">&#x27;&quot; width=&quot;400&quot; height=&quot;200&quot; style=&quot;margin-left: 50%; transform: translateX(-50%);&quot;&gt;&lt;/iframe&gt;&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable">$return</span>;<br>&#125;<br>add_shortcode(<span class="hljs-string">&#x27;github&#x27;</span>,<span class="hljs-string">&#x27;github&#x27;</span>);<br></code></pre></td></tr></table></figure><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="用-github-作者名-仓库名-github"><a href="#用-github-作者名-仓库名-github" class="headerlink" title="用[github]作者名/仓库名[/github]"></a>用[<code>github</code>]作者名/仓库名[/<code>github</code>]</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>WP美化</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>github card</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>chevereto免费图床搭建</title>
+    <link href="/2021/05/20/chevereto%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/"/>
+    <url>/2021/05/20/chevereto%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol><li> 将chevereto解压到网站根目录</li><li>修改网站配置文件，加上 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs code">location / &#123;<br>  try_files $uri $uri/ /index.php?$query_string;<br>&#125;<br></code></pre></td></tr></table></figure></li><li> 按照提示输入数据库名、账户和密码安装</li></ol><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p>[github]503611908/Chevereto-Free[/github]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>chevereto</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>宝塔搭建EasyImages图床</title>
+    <link href="/2021/05/20/%E5%AE%9D%E5%A1%94%E6%90%AD%E5%BB%BAeasyimages%E5%9B%BE%E5%BA%8A/"/>
+    <url>/2021/05/20/%E5%AE%9D%E5%A1%94%E6%90%AD%E5%BB%BAeasyimages%E5%9B%BE%E5%BA%8A/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><h2 id="支持多文件上传，简单无数据库，返回图片URL，markdown，bbscode，html的单个图床程序"><a href="#支持多文件上传，简单无数据库，返回图片URL，markdown，bbscode，html的单个图床程序" class="headerlink" title="支持多文件上传，简单无数据库，返回图片URL，markdown，bbscode，html的单个图床程序"></a>支持多文件上传，简单无数据库，返回图片URL，markdown，bbscode，html的单个图床程序</h2><h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="首先新建一个网站"><a href="#首先新建一个网站" class="headerlink" title="首先新建一个网站"></a>首先新建一个网站</h2><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083236.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083236.png\[/img\]</a></p><h2 id="然后对php检查是否安装fileinfo，没有的安装"><a href="#然后对php检查是否安装fileinfo，没有的安装" class="headerlink" title="然后对php检查是否安装fileinfo，没有的安装"></a>然后对php检查是否安装fileinfo，没有的安装</h2><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083237.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083237.png\[/img\]</a></p><h2 id="域名解析该网站"><a href="#域名解析该网站" class="headerlink" title="域名解析该网站"></a>域名解析该网站</h2><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="将最新包解压到网站根目录"><a href="#将最新包解压到网站根目录" class="headerlink" title="将最新包解压到网站根目录"></a>将最新包解压到网站根目录</h2><h2 id="修改config-php文件，将网站信息、域名、存储位置、密码等修改"><a href="#修改config-php文件，将网站信息、域名、存储位置、密码等修改" class="headerlink" title="修改config.php文件，将网站信息、域名、存储位置、密码等修改"></a>修改<code>config.php</code>文件，将网站信息、域名、存储位置、密码等修改</h2><h2 id="输入域名-check-php，查看是否缺东西"><a href="#输入域名-check-php，查看是否缺东西" class="headerlink" title="输入域名/check.php，查看是否缺东西"></a>输入域名/check.php，查看是否缺东西</h2><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083233.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083233.png\[/img\]</a></p><h2 id="若什么都不缺，就可以直接打开使用了"><a href="#若什么都不缺，就可以直接打开使用了" class="headerlink" title="若什么都不缺，就可以直接打开使用了"></a>若什么都不缺，就可以直接打开使用了</h2><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083232.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083232.png\[/img\]</a></p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="这款图床虽然简洁，但上传后没有办法直接复制markdown等链接，只能在后台打开直连以后根据这个操作，因此还是更推荐用chevereto免费版，完全能完美满足个人需求。"><a href="#这款图床虽然简洁，但上传后没有办法直接复制markdown等链接，只能在后台打开直连以后根据这个操作，因此还是更推荐用chevereto免费版，完全能完美满足个人需求。" class="headerlink" title="这款图床虽然简洁，但上传后没有办法直接复制markdown等链接，只能在后台打开直连以后根据这个操作，因此还是更推荐用chevereto免费版，完全能完美满足个人需求。"></a>这款图床虽然简洁，但上传后没有办法直接复制markdown等链接，只能在后台打开直连以后根据这个操作，因此还是更推荐用chevereto免费版，完全能完美满足个人需求。</h2><h1 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h1><p>[github]503611908/Easyimages2.0[/github] # 小问题</p><h2 id="若打开后台发现所有图标都变成了方框，是因为fontawesome脚本引用出了问题，将tinyfilemanager-php的-lt-link-href-public-static-font-awesome-min-css-rel-stylesheet-gt-改为-lt-link-rel-stylesheet-href-https-cdnjs-cloudflare-com-ajax-libs-font-awesome-4-7-0-css-font-awesome-min-css-gt"><a href="#若打开后台发现所有图标都变成了方框，是因为fontawesome脚本引用出了问题，将tinyfilemanager-php的-lt-link-href-public-static-font-awesome-min-css-rel-stylesheet-gt-改为-lt-link-rel-stylesheet-href-https-cdnjs-cloudflare-com-ajax-libs-font-awesome-4-7-0-css-font-awesome-min-css-gt" class="headerlink" title="若打开后台发现所有图标都变成了方框，是因为fontawesome脚本引用出了问题，将tinyfilemanager.php的&lt;link href=public/static/font-awesome.min.css rel=stylesheet&gt;改为&lt;link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&gt;"></a>若打开后台发现所有图标都变成了方框，是因为fontawesome脚本引用出了问题，将tinyfilemanager.php的<code>&lt;link href=public/static/font-awesome.min.css rel=stylesheet&gt;</code>改为<code>&lt;link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&gt;</code></h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>EasyImages</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>用docker自搭tiddlywiki</title>
+    <link href="/2021/05/20/%E7%94%A8docker%E8%87%AA%E6%90%ADtiddlywiki/"/>
+    <url>/2021/05/20/%E7%94%A8docker%E8%87%AA%E6%90%ADtiddlywiki/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="发现一个好用的双向链接笔记软件tiddlywiki，界面简洁，记笔记好用，准备上手尝试"><a href="#发现一个好用的双向链接笔记软件tiddlywiki，界面简洁，记笔记好用，准备上手尝试" class="headerlink" title="发现一个好用的双向链接笔记软件tiddlywiki，界面简洁，记笔记好用，准备上手尝试"></a>发现一个好用的双向链接笔记软件<code>tiddlywiki</code>，界面简洁，记笔记好用，准备上手尝试</h3><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol><li> 系统推荐centos8（有最新用最新），打开速度最快</li><li> 安装docker</li></ol><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">wget -qO- <span class="hljs-keyword">get</span>.docker.combash<br></code></pre></td></tr></table></figure><ol start="3"><li> 检测docker是否运行</li></ol><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">systemctl status docker</span><br></code></pre></td></tr></table></figure><ol start="4"><li> 若未运行，则运行</li></ol><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">systemctl <span class="hljs-literal">start</span> docker<br></code></pre></td></tr></table></figure><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ol><li> 拉取仓库</li></ol><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">docker</span> pull m<span class="hljs-number">0</span>wer/tiddlywiki<br></code></pre></td></tr></table></figure><ol start="2"><li> 创建服务</li></ol><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs elixir">docker run -d -p 你的端口<span class="hljs-symbol">:</span><span class="hljs-number">8080</span> -e <span class="hljs-string">&quot;USERNAME=用户名&quot;</span> -e <span class="hljs-string">&quot;PASSWORD=密码&quot;</span> --name 镜像名称 -v 存放vps位置<span class="hljs-symbol">:/var/lib/tiddlywiki</span> m0wer/tiddlywiki<br></code></pre></td></tr></table></figure><ol start="3"><li> 访问ip+设的端口号，即可访问tiddlywiki啦（别忘了放行端口）</li></ol><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><h3 id="tiddlywiki是单文件版，首次打开需要花较长时间"><a href="#tiddlywiki是单文件版，首次打开需要花较长时间" class="headerlink" title="tiddlywiki是单文件版，首次打开需要花较长时间"></a>tiddlywiki是单文件版，首次打开需要花较长时间</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>tiddlywiki</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>java调用python写好的程序</title>
+    <link href="/2021/04/30/java%E8%B0%83%E7%94%A8python%E5%86%99%E5%A5%BD%E7%9A%84%E7%A8%8B%E5%BA%8F/"/>
+    <url>/2021/04/30/java%E8%B0%83%E7%94%A8python%E5%86%99%E5%A5%BD%E7%9A%84%E7%A8%8B%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><h4 id="由于毕设老师要求要用springboot框架，但数据清洗用python写更简单，因此决定在python上写好数据清洗等功能的代码，然后在java里面直接调用"><a href="#由于毕设老师要求要用springboot框架，但数据清洗用python写更简单，因此决定在python上写好数据清洗等功能的代码，然后在java里面直接调用" class="headerlink" title="由于毕设老师要求要用springboot框架，但数据清洗用python写更简单，因此决定在python上写好数据清洗等功能的代码，然后在java里面直接调用"></a>由于毕设老师要求要用springboot框架，但数据清洗用python写更简单，因此决定在python上写好数据清洗等功能的代码，然后在java里面直接调用</h4><hr><h2 id="java代码"><a href="#java代码" class="headerlink" title="java代码"></a>java代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">String[] args = <span class="hljs-keyword">new</span> String[] &#123; python, D:\\pycharm_file\\test\\main.py, <span class="hljs-number">2</span> &#125;;<br>Runtime.getRuntime().exec(args);<span class="hljs-comment">// 执行py文件</span><br></code></pre></td></tr></table></figure><h4 id="其中，“2”表示传的参数，就是python里的sys-argv数组所接收到的。"><a href="#其中，“2”表示传的参数，就是python里的sys-argv数组所接收到的。" class="headerlink" title="其中，“2”表示传的参数，就是python里的sys.argv数组所接收到的。"></a>其中，“2”表示传的参数，就是python里的sys.argv数组所接收到的。</h4><hr><h2 id="python代码"><a href="#python代码" class="headerlink" title="python代码"></a>python代码</h2><h4 id="PS：此处仅给个示例代码"><a href="#PS：此处仅给个示例代码" class="headerlink" title="PS：此处仅给个示例代码"></a>PS：此处仅给个示例代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys<br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">a</span>():</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello a&#x27;</span>)<br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">b</span>():</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello b&#x27;</span>)<br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    n = <span class="hljs-built_in">int</span>(sys.argv[<span class="hljs-number">1</span>])<br>    <span class="hljs-keyword">if</span> n == <span class="hljs-number">1</span>:<br>        a()<br>    <span class="hljs-keyword">elif</span> n == <span class="hljs-number">2</span>:<br>        b()<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;error!!out of index!&#x27;</span>)<br></code></pre></td></tr></table></figure><h4 id="其中，sys-argv用于接收传参，argv-0-是文件名，因此传参从1开始"><a href="#其中，sys-argv用于接收传参，argv-0-是文件名，因此传参从1开始" class="headerlink" title="其中，sys.argv用于接收传参，argv[0]是文件名，因此传参从1开始"></a>其中，sys.argv用于接收传参，argv[0]是文件名，因此传参从1开始</h4><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083234.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083234.png\[/img\]</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>java</tag>
+      
+      <tag>python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>挂CSDN上一个抄袭的傻逼</title>
+    <link href="/2021/04/29/%E6%8C%82csdn%E4%B8%8A%E4%B8%80%E4%B8%AA%E6%8A%84%E8%A2%AD%E7%9A%84%E5%82%BB%E9%80%BC/"/>
+    <url>/2021/04/29/%E6%8C%82csdn%E4%B8%8A%E4%B8%80%E4%B8%AA%E6%8A%84%E8%A2%AD%E7%9A%84%E5%82%BB%E9%80%BC/</url>
+    
+    <content type="html"><![CDATA[<h2 id="首先来看看原版的样子"><a href="#首先来看看原版的样子" class="headerlink" title="首先来看看原版的样子"></a>首先来看看原版的样子</h2><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083229.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083229.png\[/img\]</a></p><h2 id="然后再来看看傻逼转载者的"><a href="#然后再来看看傻逼转载者的" class="headerlink" title="然后再来看看傻逼转载者的"></a>然后再来看看傻逼转载者的</h2><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809170408.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809170408.png\[/img\]</a></p><h3 id="这人转载是直接f12转html代码？全片文章代码全是这样，真就是傻逼，而且原创文章数量，等级什么的都比原创还高，一点脸不要。"><a href="#这人转载是直接f12转html代码？全片文章代码全是这样，真就是傻逼，而且原创文章数量，等级什么的都比原创还高，一点脸不要。" class="headerlink" title="这人转载是直接f12转html代码？全片文章代码全是这样，真就是傻逼，而且原创文章数量，等级什么的都比原创还高，一点脸不要。"></a>这人转载是直接f12转html代码？全片文章代码全是这样，真就是傻逼，而且原创文章数量，等级什么的都比原创还高，一点脸不要。</h3><h3 id="他的空间"><a href="#他的空间" class="headerlink" title="他的空间"></a><a href="https://blog.csdn.net/qq_32649581">他的空间</a></h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>csdn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Sprint Boot出现警告</title>
+    <link href="/2021/04/28/sprint-boot%E5%87%BA%E7%8E%B0%E8%AD%A6%E5%91%8A/"/>
+    <url>/2021/04/28/sprint-boot%E5%87%BA%E7%8E%B0%E8%AD%A6%E5%91%8A/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>[warning] WARNING: An illegal reflective access operation has occurred WARNING: Illegal reflective access by org.apache.ibatis.reflection.Reflector (file:/C:/Users/Administrator/.m2/repository/org/mybatis/mybatis/3.4.0/mybatis-3.4.0.jar)to method java.lang.Object.finalize() WARNING: Please consider reporting this to the maintainers of org.apache.ibatis.reflection.Reflector WARNING: Use –illegal-access=warn to enable warnings of further illegal reflective access operations WARNING: All illegal access operations will be denied in a future release [/warning]</p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>找到编辑配置</p><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083227.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083227.png\[/img\]</a> 添加虚拟机选项添加 <code>--add-opens java.base/java.lang=ALL-UNNAMED</code> 配置</p><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083235.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083235.png\[/img\]</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>spring boot</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>好看的鬼畜</title>
+    <link href="/2021/04/20/%E5%A5%BD%E7%9C%8B%E7%9A%84%E9%AC%BC%E7%95%9C/"/>
+    <url>/2021/04/20/%E5%A5%BD%E7%9C%8B%E7%9A%84%E9%AC%BC%E7%95%9C/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="请把女儿嫁给我"><a href="#请把女儿嫁给我" class="headerlink" title="请把女儿嫁给我"></a>请把女儿嫁给我</h2><p>[youtube]ROCdUH2BwPQ[/youtube]</p><h2 id="审判"><a href="#审判" class="headerlink" title="审判"></a>审判</h2><p>[youtube]2-eUGMv0kmY[/youtube]</p><h2 id="调酒师"><a href="#调酒师" class="headerlink" title="调酒师"></a>调酒师</h2><p>[youtube]bv1IzLZjmRk[/youtube]</p><h2 id="E判定"><a href="#E判定" class="headerlink" title="E判定"></a>E判定</h2><p>[youtube]ux1vN31KBJI[/youtube]</p><h2 id="不知道"><a href="#不知道" class="headerlink" title="不知道"></a>不知道</h2><p>[youtube]FbcSb6CzddY[/youtube]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>我</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MTProto搭建</title>
+    <link href="/2021/04/20/mtproto%E6%90%AD%E5%BB%BA/"/>
+    <url>/2021/04/20/mtproto%E6%90%AD%E5%BB%BA/</url>
+    
+    <content type="html"><![CDATA[<p>[warning]对vps不好，已弃用[/warning]</p><p><del>bash &lt;(wget -qO- <a href="https://git.io/mtg.sh">https://git.io/mtg.sh</a>)</del></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MTProto</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>一键安装Xray</title>
+    <link href="/2021/04/20/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85xray/"/>
+    <url>/2021/04/20/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85xray/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -P /root -N --no-check-certificate https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh<br></code></pre></td></tr></table></figure><h2 id="更改时区"><a href="#更改时区" class="headerlink" title="更改时区"></a>更改时区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>或者直接<br>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br></code></pre></td></tr></table></figure><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol><li> 选择任意组合安装</li><li> 选择xray内核</li><li> 输入0并继续</li><li> 输入绑定好ip的域名</li><li> 随机uuid</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>xray</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>nat内存不够无法用bbr加速脚本换内核</title>
+    <link href="/2021/04/19/nat%E5%86%85%E5%AD%98%E4%B8%8D%E5%A4%9F%E6%97%A0%E6%B3%95%E7%94%A8bbr%E5%8A%A0%E9%80%9F%E8%84%9A%E6%9C%AC%E6%8D%A2%E5%86%85%E6%A0%B8/"/>
+    <url>/2021/04/19/nat%E5%86%85%E5%AD%98%E4%B8%8D%E5%A4%9F%E6%97%A0%E6%B3%95%E7%94%A8bbr%E5%8A%A0%E9%80%9F%E8%84%9A%E6%9C%AC%E6%8D%A2%E5%86%85%E6%A0%B8/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h3 id="如碳云的nat，换现在的bbr内核时，会因dns被污染或其他原因无法下载，导致无法开启bbr加速"><a href="#如碳云的nat，换现在的bbr内核时，会因dns被污染或其他原因无法下载，导致无法开启bbr加速" class="headerlink" title="如碳云的nat，换现在的bbr内核时，会因dns被污染或其他原因无法下载，导致无法开启bbr加速"></a>如碳云的nat，换现在的bbr内核时，会因dns被污染或其他原因无法下载，导致无法开启bbr加速</h3><h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><h3 id="卸载内核脚本切换为不卸载内核版本，然后选择31下载最新内核，然后reboot，重启后即可开启bbr加速"><a href="#卸载内核脚本切换为不卸载内核版本，然后选择31下载最新内核，然后reboot，重启后即可开启bbr加速" class="headerlink" title="卸载内核脚本切换为不卸载内核版本，然后选择31下载最新内核，然后reboot，重启后即可开启bbr加速"></a>卸载内核脚本切换为不卸载内核版本，然后选择31下载最新内核，然后reboot，重启后即可开启bbr加速</h3><hr><h2 id="ps-相关脚本在之前文章中有"><a href="#ps-相关脚本在之前文章中有" class="headerlink" title="ps:相关脚本在之前文章中有"></a>ps:相关脚本在之前文章中有</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>bbr</tag>
+      
+      <tag>nat</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>wordpress后台优化</title>
+    <link href="/2021/04/17/wordpress%E5%90%8E%E5%8F%B0%E4%BC%98%E5%8C%96/"/>
+    <url>/2021/04/17/wordpress%E5%90%8E%E5%8F%B0%E4%BC%98%E5%8C%96/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="修改function-php"><a href="#修改function-php" class="headerlink" title="修改function.php"></a>修改function.php</h1><h3 id="在主题的function-php的头部加入"><a href="#在主题的function-php的头部加入" class="headerlink" title="在主题的function.php的头部加入"></a>在主题的function.php的头部加入</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash">// 彻底关闭自动更新<br>add_filter(<span class="hljs-string">&#x27;automatic_updater_disabled&#x27;</span>, <span class="hljs-string">&#x27;__return_true&#x27;</span>);<br>// 关闭更新检查定时作业<br>remove_action(<span class="hljs-string">&#x27;init&#x27;</span>, <span class="hljs-string">&#x27;wp_schedule_update_checks&#x27;</span>);<br>// 移除已有的版本检查定时作业<br>wp_clear_scheduled_hook(<span class="hljs-string">&#x27;wp_version_check&#x27;</span>);<br>// 移除已有的插件更新定时作业<br>wp_clear_scheduled_hook(<span class="hljs-string">&#x27;wp_update_plugins&#x27;</span>);<br>// 移除已有的主题更新定时作业 <br>wp_clear_scheduled_hook(<span class="hljs-string">&#x27;wp_update_themes&#x27;</span>);<br>// 移除已有的自动更新定时作业 <br>wp_clear_scheduled_hook(<span class="hljs-string">&#x27;wp_maybe_auto_update&#x27;</span>);<br>// 移除后台内核更新检查 <br>remove_action( <span class="hljs-string">&#x27;admin_init&#x27;</span>, <span class="hljs-string">&#x27;_maybe_update_core&#x27;</span> );<br>// 移除后台插件更新检查 <br>remove_action( <span class="hljs-string">&#x27;load-plugins.php&#x27;</span>, <span class="hljs-string">&#x27;wp_update_plugins&#x27;</span> );<br>remove_action( <span class="hljs-string">&#x27;load-update.php&#x27;</span>, <span class="hljs-string">&#x27;wp_update_plugins&#x27;</span> );<br>remove_action( <span class="hljs-string">&#x27;load-update-core.php&#x27;</span>, <span class="hljs-string">&#x27;wp_update_plugins&#x27;</span> );<br>remove_action( <span class="hljs-string">&#x27;admin_init&#x27;</span>, <span class="hljs-string">&#x27;_maybe_update_plugins&#x27;</span> );<br>// 移除后台主题更新检查 <br>remove_action( <span class="hljs-string">&#x27;load-themes.php&#x27;</span>, <span class="hljs-string">&#x27;wp_update_themes&#x27;</span> );<br>remove_action( <span class="hljs-string">&#x27;load-update.php&#x27;</span>, <span class="hljs-string">&#x27;wp_update_themes&#x27;</span> );<br>remove_action( <span class="hljs-string">&#x27;load-update-core.php&#x27;</span>, <span class="hljs-string">&#x27;wp_update_themes&#x27;</span> );<br>remove_action( <span class="hljs-string">&#x27;admin_init&#x27;</span>, <span class="hljs-string">&#x27;_maybe_update_themes&#x27;</span> );<br></code></pre></td></tr></table></figure><hr><h1 id="修改wp-config-php"><a href="#修改wp-config-php" class="headerlink" title="修改wp-config.php"></a>修改wp-config.php</h1><h3 id="关闭wordpress小版本更新"><a href="#关闭wordpress小版本更新" class="headerlink" title="关闭wordpress小版本更新"></a>关闭wordpress小版本更新</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">define( <span class="hljs-string">&#x27;AUTOMATIC_UPDATER_DISABLED&#x27;</span>, <span class="hljs-literal">true</span> );<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>WP美化</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>wordpress</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>dnf虚拟机</title>
+    <link href="/2021/04/13/dnf%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <url>/2021/04/13/dnf%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="dnf虚拟机，可过tp"><a href="#dnf虚拟机，可过tp" class="headerlink" title="dnf虚拟机，可过tp"></a>dnf虚拟机，可过tp</h1><blockquote><p><a href="https://pan.baidu.com/s/1CL2TzJiaFzA-NZa2Zl6QKg">网盘链接</a> 提取码：qvb0</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>dnf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>python的循环中数组remove问题</title>
+    <link href="/2021/04/10/python%E7%9A%84%E5%BE%AA%E7%8E%AF%E4%B8%AD%E6%95%B0%E7%BB%84remove%E9%97%AE%E9%A2%98/"/>
+    <url>/2021/04/10/python%E7%9A%84%E5%BE%AA%E7%8E%AF%E4%B8%AD%E6%95%B0%E7%BB%84remove%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h3 id="在循环中删除数组元素时，会出现如下问题"><a href="#在循环中删除数组元素时，会出现如下问题" class="headerlink" title="在循环中删除数组元素时，会出现如下问题"></a>在循环中删除数组元素时，会出现如下问题</h3><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083230.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083230.png\[/img\]</a></p><h3 id="当运行时会发现出现数组下标溢出问题。这是由于列表的可变性，每一次删除一个元素，列表的长度就会发生变化，元素的索引也会发生变化。"><a href="#当运行时会发现出现数组下标溢出问题。这是由于列表的可变性，每一次删除一个元素，列表的长度就会发生变化，元素的索引也会发生变化。" class="headerlink" title="当运行时会发现出现数组下标溢出问题。这是由于列表的可变性，每一次删除一个元素，列表的长度就会发生变化，元素的索引也会发生变化。"></a>当运行时会发现出现数组下标溢出问题。这是由于列表的可变性，每一次删除一个元素，列表的长度就会发生变化，元素的索引也会发生变化。</h3><hr><h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><h3 id="利用deepcopy来复制一个数组出来，对该数组比对，原数组删除"><a href="#利用deepcopy来复制一个数组出来，对该数组比对，原数组删除" class="headerlink" title="利用deepcopy来复制一个数组出来，对该数组比对，原数组删除"></a>利用deepcopy来复制一个数组出来，对该数组比对，原数组删除</h3><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083238.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083238.png\[/img\]</a></p><h3 id="至于为什么不用b-a来复制，因为涉及到引用和深浅复制的问题，因此不细说"><a href="#至于为什么不用b-a来复制，因为涉及到引用和深浅复制的问题，因此不细说" class="headerlink" title="至于为什么不用b = a来复制，因为涉及到引用和深浅复制的问题，因此不细说"></a>至于为什么不用b = a来复制，因为涉及到引用和深浅复制的问题，因此不细说</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>python</tag>
+      
+      <tag>deepcopy</tag>
+      
+      <tag>remove</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>brook中转最新方法（脚本不行以后）</title>
+    <link href="/2021/02/21/brook%E4%B8%AD%E8%BD%AC%E6%9C%80%E6%96%B0%E6%96%B9%E6%B3%95%EF%BC%88%E8%84%9A%E6%9C%AC%E4%B8%8D%E8%A1%8C%E4%BB%A5%E5%90%8E%EF%BC%89/"/>
+    <url>/2021/02/21/brook%E4%B8%AD%E8%BD%AC%E6%9C%80%E6%96%B0%E6%96%B9%E6%B3%95%EF%BC%88%E8%84%9A%E6%9C%AC%E4%B8%8D%E8%A1%8C%E4%BB%A5%E5%90%8E%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="1-下载brook"><a href="#1-下载brook" class="headerlink" title="1.下载brook"></a>1.下载brook</h1><p><strong>用curl直接下载brook文件</strong>截止目前最新版是v20210701, 以linux 64位系统为例 截止目前最新版是v20210401, 以linux 64位系统为例截止目前最新版是v20210214, 以linux 64位系统为例</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -L https://github.com/txthinking/brook/releases/download/v20210701/brook_Linux_amd64 -o /usr/bin/brook<br>chmod +x /usr/bin/brook<br></code></pre></td></tr></table></figure><p>如果你的系统不是linux 64位系统, 你可以在<a href="https://github.com/txthinking/brook/releases">releases</a>页面找到对应你系统的brook文件链接 # 2.进行中转</p><p>执行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nohup brook relay -f :1111 -t 1.2.3.4:2222 &gt; /dev/null 2&gt;&amp;1 &amp;<br></code></pre></td></tr></table></figure><p>其中1111表示中转鸡端口，2222表示落地鸡端口 若有多个需要转发，挨个执行即可 若要进行查看，输入jobs指令 若关闭终端后，新终端已无法用job来看nohup后台，需用ps -auxgrep brook来看</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>brook</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Linux swap虚拟内存添加/修改/删除</title>
+    <link href="/2021/02/10/linux-swap%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E6%B7%BB%E5%8A%A0-%E4%BF%AE%E6%94%B9-%E5%88%A0%E9%99%A4/"/>
+    <url>/2021/02/10/linux-swap%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E6%B7%BB%E5%8A%A0-%E4%BF%AE%E6%94%B9-%E5%88%A0%E9%99%A4/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="什么是swap虚拟内存"><a href="#什么是swap虚拟内存" class="headerlink" title="什么是swap虚拟内存"></a>什么是swap虚拟内存</h1><p>三两句大白话简述一下，swap分区也就是centOs上虚拟内存，一般情况下默认是0，也就是没有使用这个虚拟内存的。 那这个虚拟内存有什么用？它就是把我们的磁盘空间转为内存，比方说拿出2G的磁盘空间来做内存使用。 当然它的性能与我们物理内存的性能相比那可是低不少的。 像我的话，物理内存不够用了，为了省钱，于是就用虚拟内存来做内存。 bb完了，接下来实践一下</p><hr><h1 id="分区设置大小建议"><a href="#分区设置大小建议" class="headerlink" title="分区设置大小建议"></a>分区设置大小建议</h1><p>物理内存</p><p>建议的交换空间大小</p><p>如果开启休眠功能建议的交换空间大小</p><p>⩽ 2GB</p><p>内存的2倍</p><p>内存的3倍</p><p>&gt; 2GB – 8GB</p><p>等于内存大小</p><p>内存的2倍</p><p>&gt; 8GB – 64GB</p><p>至少4G</p><p>内存的1.5倍</p><p>&gt; 64GB</p><p>至少4G</p><p>不建议使用休眠</p><hr><h1 id="添加分区"><a href="#添加分区" class="headerlink" title="添加分区"></a>添加分区</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建4G的虚拟内存大小，在/home/swap下</span><br>dd <span class="hljs-keyword">if</span>=/dev/zero of=/home/swap bs=1024 count=4096000<br><span class="hljs-comment"># 应用为swap格式文件</span><br>mkswap /home/swap<br><span class="hljs-comment"># 将自定义的swap挂载到swap分区</span><br>/sbin/swapon /home/swap<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@VM_16_14_centos /]<span class="hljs-comment"># free -h</span><br>              total        used        free      shared  buff/cache   available<br>Mem:           3.7G        641M        168M        684K        2.9G        2.8G<br>Swap:          3.9G          0B        3.9G<br></code></pre></td></tr></table></figure><p><strong>查看swap分区大小及情况</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@VM_16_14_centos /]<span class="hljs-comment"># cat /proc/swaps</span><br>Filename                                Type            Size    Used    Priority<br>/home/swap                              file            4095996 6144    -2<br></code></pre></td></tr></table></figure><h2 id="永久生效"><a href="#永久生效" class="headerlink" title="永久生效"></a>永久生效</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">vi /etc/fstab<br><span class="hljs-comment"># 在文件最后添加如下一行</span><br>/home/swap swap swap default 0 0<br></code></pre></td></tr></table></figure><hr><h1 id="修改分区大小"><a href="#修改分区大小" class="headerlink" title="修改分区大小"></a>修改分区大小</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 关闭swap分区</span><br>/sbin/swapoff /home/swap<br><span class="hljs-comment"># 修改为2G</span><br>dd <span class="hljs-keyword">if</span>=/dev/zero of=/home/swap bs=1024 count=2048000<br><span class="hljs-comment"># 应用为swap格式文件</span><br>mkswap /home/swap<br><span class="hljs-comment"># 将自定义的swap挂载到swap分区</span><br>/sbin/swapon /home/swap<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@VM_16_14_centos /]<span class="hljs-comment"># free -h</span><br>              total        used        free      shared  buff/cache   available<br>Mem:           3.7G        643M        902M        684K        2.2G        2.8G<br>Swap:          2.0G          0B        2.0G<br></code></pre></td></tr></table></figure><hr><h1 id="删除swap分区"><a href="#删除swap分区" class="headerlink" title="删除swap分区"></a>删除swap分区</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 关闭swap分区</span><br>/sbin/swapoff /home/swap<br><span class="hljs-comment"># 删除分区文件</span><br>rm -rf /home/swap<br><span class="hljs-comment"># 删除自动挂载配置命令</span><br><span class="hljs-comment"># 将刚刚永久生效配置的最后一行删除即可</span><br>vi /etc/fstab<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>区间再现公式</title>
+    <link href="/2020/09/30/%E5%8C%BA%E9%97%B4%E5%86%8D%E7%8E%B0%E5%85%AC%E5%BC%8F/"/>
+    <url>/2020/09/30/%E5%8C%BA%E9%97%B4%E5%86%8D%E7%8E%B0%E5%85%AC%E5%BC%8F/</url>
+    
+    <content type="html"><![CDATA[<p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083220.jpg/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083220.jpg\[/img\]</a> [img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083226.jpg/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083226.jpg\[/img\]</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>考研数学</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>区间再现公式</tag>
+      
+      <tag>高数</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Miku</title>
+    <link href="/2020/09/30/mikum/"/>
+    <url>/2020/09/30/mikum/</url>
+    
+    <content type="html"><![CDATA[<p>[youtube]F845MOydfec[/youtube]</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>我</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>miku</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>VPS优化之Linux添加swap交换分区(虚拟内存)</title>
+    <link href="/2020/09/06/vps%E4%BC%98%E5%8C%96%E4%B9%8Blinux%E6%B7%BB%E5%8A%A0swap%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"/>
+    <url>/2020/09/06/vps%E4%BC%98%E5%8C%96%E4%B9%8Blinux%E6%B7%BB%E5%8A%A0swap%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>相信很多使用<a href="https://www.vpser.net/">VPS</a>的朋友和我一样，没有太多的米买更多的内存来进行升级，通常使用swap交换分区来缓解系统资源紧张的压力，间接给VPS提高一下性能。</p><p>下面说一下VPS添加swap交换分区的方法(<strong>只有虚拟化为Xen、KVM、VMWare的VPS可以，OpenVZ不支持添加swap</strong>)。</p><p>1、确认是否有SWAP，可以执行free -m 命令查看，如果有swap一行且total项下不为零的话就是存在swap，就不适合再进行添加swap。</p><p>2、以下以添加2GB SWAP为例，生成文件块：（SWAP一般设置为内存的2倍，并非完全以此为标准，只适合4GB以下内存，count后面的数为要设置的swap大小xxMB）dd if=/dev/zero of=/var/swapfile bs=1M count=2048</p><p>3、创建swap文件/sbin/mkswap /var/swapfile</p><p>4、激活swap文件/sbin/swapon /var/swapfile</p><p>5、查看一下swap是否正确：/sbin/swapon -s</p><p>另外为了安全建议执行：chmod 0600 /var/swapfile</p><p>改一下权限<br>6、到fstab文件中添加开机自动挂载设置vi /etc/fstab</p><p>在末尾增加以下内容：/var/swapfile swap swap defaults 0 0也可以执行如下命令，感觉这样更方便echo “/var/swapfile swap swap defaults 0 0” &gt;&gt;/etc/fstab</p><h2 id="SWAP删除方法："><a href="#SWAP删除方法：" class="headerlink" title="SWAP删除方法："></a>SWAP删除方法：</h2><p>/sbin/swapoff /var/swapfilerm -f /var/swapfile</p><p>删掉添加的自动挂载swap的设置vi /etc/fstab</p><h3 id="顺便附上DD命令的参数介绍："><a href="#顺便附上DD命令的参数介绍：" class="headerlink" title="顺便附上DD命令的参数介绍："></a>顺便附上DD命令的参数介绍：</h3><p>dd命令<br>功能：把指定的输入文件拷贝到指定的输出文件中，并且在拷贝过程中可以进行格式转换。可以用该命令实现DOS下的diskcopy命令的作用。先用dd命令把软盘上的数据写成硬盘的一个寄存文件，再把这个寄存文件写入第二张软盘上，完成diskcopy的功能。需要注意的是，应该将硬盘上的寄存文件用rm命令删除掉。系统默认使用标准输入文件和标准输出文件。<br>语法：dd [选项] if =输入文件（或设备名称）。</p><p>of =输出文件（或设备名称）。</p><p>ibs = bytes 一次读取bytes字节，即读入缓冲区的字节数。</p><p>skip = blocks 跳过读入缓冲区开头的ibs*blocks块。</p><p>obs = bytes 一次写入bytes字节，即写入缓冲区的字节数。</p><p>bs = bytes 同时设置读/写缓冲区的字节数（等于设置ibs和obs）。</p><p>cbs = byte 一次转换bytes字节。</p><p>count=blocks 只拷贝输入的blocks块。</p><p><strong>&gt;&gt;转载请注明出处：<a href="https://www.vpser.net/">VPS侦探</a></strong></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>vps</tag>
+      
+      <tag>swap</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>使用VPS服务器自建SpeedTest客户端网络测速页面</title>
+    <link href="/2020/09/04/%E4%BD%BF%E7%94%A8vps%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%BB%BAspeedtest%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%BD%91%E7%BB%9C%E6%B5%8B%E9%80%9F%E9%A1%B5%E9%9D%A2/"/>
+    <url>/2020/09/04/%E4%BD%BF%E7%94%A8vps%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%BB%BAspeedtest%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%BD%91%E7%BB%9C%E6%B5%8B%E9%80%9F%E9%A1%B5%E9%9D%A2/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>该页面程序修改自<code>adolfintel</code>的<a href="https://github.com/adolfintel/speedtest">speedtest项目</a>适用于<code>IDC</code>服务商服务器或者自己的<code>VPS</code>自建<code>speedtest</code>，供客户端对服务器进行网络测试，程序轻便<code>5KB</code>。</p><p>目前很多主机商用的是<code>Looking Glass</code>，搭起来稍微有些繁琐，如果嫌麻烦，可以试试我优化的这个程序。</p><h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809171620.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809171620.png\[/img\]</a> [img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809171711.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809171711.png\[/img\]</a></p><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ol><li> 根据<code>example3.html</code>原版汉化精简界面。</li><li> 优化细节排版，参照beta.speedtest.net <code>css</code>稍作美化。</li><li> 如果你喜欢别的样式可以根据<code>Github</code>项目中的其他<code>example</code>页面自行美化修改。</li></ol><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Speedtest Lite C2S：</strong><a href="https://www.moerats.com/usr/down/speedtest_lite_c2s.zip">点击下载</a> <strong>原版Github：</strong><a href="https://github.com/adolfintel/speedtest">https://github.com/adolfintel/speedtest</a></p><p>先搭建<code>WEB</code>环境，军哥<code>lnmp</code>或者宝塔等等都可以，再添加域名，也可以直接使用<code>ip</code>地址，然后下载解压并上传<code>Speedtest Lite C2S</code>程序到网站目录，最后访问域名或者<code>ip</code>即可！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>探针</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ServerStatus-Hotaru云探针的安装与配置</title>
+    <link href="/2020/08/31/serverstatus-hotaru%E4%BA%91%E6%8E%A2%E9%92%88%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    <url>/2020/08/31/serverstatus-hotaru%E4%BA%91%E6%8E%A2%E9%92%88%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>APTX在博客上发布了基于ServerStatus-Toyo修改的云探针，但是评论上说有人不会配置，建议出个教程。那我就在本博客写一个教程吧。 脚本来自：<a href="https://www.aptx.xin/serverstatus-hotaru.html">https://www.aptx.xin/serverstatus-hotaru.html</a>Github：<a href="https://github.com/CokeMine/ServerStatus-Hotar">https://github.com/CokeMine/ServerStatus-Hotar</a>## 服务端</p><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://raw.githubusercontent.com/CokeMine/ServerStatus-Hotaru/master/status.sh<br>bash status.sh s<br></code></pre></td></tr></table></figure><ol><li> 选择1，配置服务端</li><li> 没什么需求的话，端口建议默认就好</li><li> 如果本地没装别的如Nginx或者Apache之类的，直接Y就好</li><li> 绑定域名或IP访问</li><li> 端口自主选择</li><li> 添加客户端：选择7后选1 剩下的信息自己填就好了</li><li> 删除（修改）服务端：选7后在选择</li></ol><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash status.sh c<br></code></pre></td></tr></table></figure><p>后选1然后按照服务端填写的即可 修改方法 已经安装了原版想换到APTX这个版本的话 配置文件：/usr/local/ServerStatus/server/config.json备份并自行添加Region [img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083222.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083222.png\[/img\]</a> 卸载ServerStatus-Toyo安装ServerStatus-Hotaru替换配置文件，重启ServerStatus ## 相关开源项目 ：</p><ul><li>  ServerStatus-Toyo：<a href="https://github.com/ToyoDAdoubiBackup/ServerStatus-Toyo">https://github.com/ToyoDAdoubiBackup/ServerStatus-Toyo</a></li><li>  ServerStatus： <a href="https://github.com/BotoX/ServerStatus">https://github.com/BotoX/ServerStatus</a></li><li>  mojeda\‘s ServerStatus: <a href="https://github.com/mojeda/ServerStatus">https://github.com/mojeda/ServerStatus</a></li><li>  BlueVM\‘s project: <a href="http://www.lowendtalk.com/discussion/comment/169690#Comment_169690">http://www.lowendtalk.com/discussion/comment/169690#Comment_169690</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>探针</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>bbr/bbrplus/bbr2/锐速内核安装脚本更新测试版</title>
+    <link href="/2020/08/10/bbr-bbrplus-bbr2-%E9%94%90%E9%80%9F%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC%E6%9B%B4%E6%96%B0%E6%B5%8B%E8%AF%95%E7%89%88/"/>
+    <url>/2020/08/10/bbr-bbrplus-bbr2-%E9%94%90%E9%80%9F%E5%86%85%E6%A0%B8%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC%E6%9B%B4%E6%96%B0%E6%B5%8B%E8%AF%95%E7%89%88/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><h2 id="不卸载内核"><a href="#不卸载内核" class="headerlink" title="不卸载内核"></a>不卸载内核</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -N --no-check-certificate https://github.000060000.xyz/tcpx.sh &amp;&amp; chmod +x tcpx.sh &amp;&amp; ./tcpx.sh<br></code></pre></td></tr></table></figure><p>或</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -N https://github.000060000.xyz/tcpx.sh &amp;&amp; chmod +x tcpx.sh &amp;&amp; ./tcpx.sh<br></code></pre></td></tr></table></figure><hr><h2 id="卸载内核"><a href="#卸载内核" class="headerlink" title="卸载内核"></a>卸载内核</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -N --no-check-certificate https://github.000060000.xyz/tcp.sh &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh<br></code></pre></td></tr></table></figure><p>或</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -N https://github.000060000.xyz/tcp.sh &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh<br></code></pre></td></tr></table></figure><hr><p>bbr内核更新为5.5/5.4</p><p>bbrplus降级到4.14.129 安装方法和安装的内核均和原作者一致 彻底甩锅 维持原来的支持版本 不再支持c6,c8;debian和ubuntu各版本安装问题和我无关</p><p>不支持32位系统 锐速内核稍微更新</p><p>去掉魔改版 增加xanmod 5.5.1版本 xanmod 只添加了centos7,8 debian9,10</p><p>5.5内核支持cake队列 5.4未测试</p><p>测试版本，建议先用不卸载内核版本测试，然后再用正常版本 不卸载内核表示不会去卸载现有的内核</p><p>测试分支 <a href="https://github.com/ylx2016/Linux-NetSpeed/tree/2020.2.3">https://github.com/ylx2016/Linux-NetSpeed/tree/2020.2.3</a> <a href="https://github.com/ylx2016/Linux-NetSpeed/releases">https://github.com/ylx2016/Linux-NetSpeed/releases</a></p><p>原作者 <a href="https://github.com/cx9208/Linux-NetSpeed">https://github.com/cx9208/Linux-NetSpeed</a> <a href="https://github.com/chiakge/Linux-NetSpeed">https://github.com/chiakge/Linux-NetSpeed</a> 2020.3.5 修复bbrplus降级后debian/ubuntu的BUG [img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809171922.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809171922.png\[/img\]</a> 双持 [img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809172224.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809172224.png\[/img\]</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>bbr</tag>
+      
+      <tag>bbrplus</tag>
+      
+      <tag>bbr锐速</tag>
+      
+      <tag>vps</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>VPS测试脚本</title>
+    <link href="/2020/08/03/vps%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/"/>
+    <url>/2020/08/03/vps%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h1 id="0-vps测速整合脚本"><a href="#0-vps测速整合脚本" class="headerlink" title="0.vps测速整合脚本"></a>0.vps测速整合脚本</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget vpstest.cn/it &amp;&amp; bash it<br></code></pre></td></tr></table></figure><h1 id="1-superbench"><a href="#1-superbench" class="headerlink" title="1.superbench"></a>1.superbench</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh  bash<br></code></pre></td></tr></table></figure><h1 id="2-LemonBenchIntl"><a href="#2-LemonBenchIntl" class="headerlink" title="2. LemonBenchIntl"></a>2. LemonBenchIntl</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl -fsL https://ilemonra.in/LemonBenchIntl  bash -s fast<br></code></pre></td></tr></table></figure><h1 id="3-SuperSpeed"><a href="#3-SuperSpeed" class="headerlink" title="3.SuperSpeed"></a>3.SuperSpeed</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">bash <br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>vps</tag>
+      
+      <tag>vps测试</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>V2Ray搭建详细教程</title>
+    <link href="/2020/07/26/v2ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/"/>
+    <url>/2020/07/26/v2ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<p>[toc]</p><h2 id="本教程参考233boy大佬的教程："><a href="#本教程参考233boy大佬的教程：" class="headerlink" title="本教程参考233boy大佬的教程："></a>本教程参考233boy大佬的教程：</h2><p><a href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B">V2Ray搭建详细教程</a></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>此 V2Ray 教程完完全全是为小白准备的，从购买 VPS 到使用 SSH 登录并使用 V2Ray 一键安装脚本配置 V2Ray，详细的图文教程确保你可以百分百成功搭建 V2Ray 使用，哪怕你只是一个小白。 由于 V2Ray 的配置对于小白来说是非常不友好的，所以此 V2Ray 教程的 V2Ray 服务器端配置将会使用233boy大佬撰写的<a href="https://github.com/233boy/v2ray/wiki/V2Ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC">V2Ray 一键安装脚本</a>，这是一个对小白友好的 V2Ray 一键脚本，简化 V2Ray 安装和部署，并且自动开启 BBR 优化，当然你也可以手动打开 BBR 来优化 V2Ray，也可以选择使用锐速来 优化 V2Ray。</p><h1 id="V2Ray-简介"><a href="#V2Ray-简介" class="headerlink" title="V2Ray 简介"></a>V2Ray 简介</h1><p>官网：<a href="https://www.v2ray.com/">https://www.v2ray.com</a><a href="https://www.v2ray.com/">V2Ray(Project V)</a> 相对于 Shadowsocks，V2Ray 更像全能选手，拥有更多可选择的协议 / 传输载体 (Socks、HTTP、TLS、TCP、mKCP、WebSocket )，还有强大的路由功能，不仅仅于此，它亦包含 Shadowsocks 组件，你只需要安装 V2Ray，你就可以使用所有的 V2Ray 相关的特性包括使用 Shadowsocks，由于 V2Ray 是使用 GO 语言所撰写的，天生的平台部署优势，下载即可使用，当然啦，由于 V2Ray 的配置相对来说是很繁琐的，毫无夸张的说，但是有了本人所写的<a href="https://github.com/233boy/v2ray/wiki/V2Ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC">V2Ray 一键安装脚本</a>加持下，使用 V2Ray 便会显得轻松多了。</p><h1 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h1><h3 id="总结一下此文章的大致流程，此-V2Ray-教程可百分百帮助你搭建-V2Ray-使用。哪怕你只是一个小白。"><a href="#总结一下此文章的大致流程，此-V2Ray-教程可百分百帮助你搭建-V2Ray-使用。哪怕你只是一个小白。" class="headerlink" title="总结一下此文章的大致流程，此 V2Ray 教程可百分百帮助你搭建 V2Ray 使用。哪怕你只是一个小白。"></a>总结一下此文章的大致流程，此 V2Ray 教程可百分百帮助你搭建 V2Ray 使用。哪怕你只是一个小白。</h3><h4 id="安装-SSH客户端"><a href="#安装-SSH客户端" class="headerlink" title="安装 SSH客户端"></a>安装 SSH客户端</h4><p>要登录 VPS，当然需要 SSH 客户端 #### 登录 VPS</p><p>使用 Xshell 配置 VPS SSH 信息，然后登录 #### 安装 V2Ray</p><p>安装过程你可以随意选择你喜欢的传输协议或者配置 Shadowsocks #### V2Ray 安装完成</p><p>此时你可以使用客户端配置 V2Ray 使用了 #### V2Ray 高级玩法</p><p>配置 WebSocket + TLS ， HTTP/2 ， mKCP 等 # 安装SSH客户端</p><p>大部分人推荐的SSH客户端一般都为Xshell，但经过我的亲身体验，我推荐使用FinalShell。一般购买VPS后使用Xshell连接时都会碰到一个常见的问题，那就是出现10053错误以致连接不上，而FinalShell不仅有海外服务器加速，还提供了图形界面的文件操作，这对很多不习惯vim操作的萌新是很友好的。<a href="http://www.hostbuf.com/t/988.html">下载地址</a># 安装 V2Ray</p><h3 id="为安装V2Ray，首先输入以下指令安装一些工具："><a href="#为安装V2Ray，首先输入以下指令安装一些工具：" class="headerlink" title="为安装V2Ray，首先输入以下指令安装一些工具："></a>为安装V2Ray，首先输入以下指令安装一些工具：</h3><p>centos用：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install wget curl<br></code></pre></td></tr></table></figure><p>debain、ubuntu用:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt-get install wget curl<br></code></pre></td></tr></table></figure><h3 id="接下来就是安装环节了。"><a href="#接下来就是安装环节了。" class="headerlink" title="接下来就是安装环节了。"></a>接下来就是安装环节了。</h3><p>输入下面命令回车，你可以复制过去，然后在 Finalshell 界面按 Ctrl + Shift + V 即可粘贴，不能按 Ctrl + V 的。。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -s -L https://git.io/v2ray.sh)<br></code></pre></td></tr></table></figure><p>然后选择安装，即是输入 1 回车</p><p>选择传输协议，如果没有特别的需求，使用默认的 TCP 传输协议即可，直接回车</p><p>选择端口，如果没有特别的需求，使用默认的端口即可，直接回车</p><p>是否屏蔽广告，除非你真的需要，一般来说，直接回车即可 。因为我有域名，所以我选择的是ws+tls传输协议，这个后面讲一下如何来操作。</p><p>是否配置 Shadowsocks ，如果不需要就直接回车，否则就输入 Y 回车</p><p>Shadowsocks 端口，密码，加密方式这些东西自己看情况配置即可，我个人当然是全部直接回车。。</p><p>OK，按回车继续</p><p>安装信息，如果确保没有什么问题了，按回车继续</p><p>(备注，安装信息会因你的配置而变化..不用在乎这截图)</p><p>(备注，由于我懒…脚本显示的一些信息可能会跟上面的截图有少许不同，但实际上都是很简单明了的)</p><h1 id="V2Ray-安装完成"><a href="#V2Ray-安装完成" class="headerlink" title="V2Ray 安装完成"></a>V2Ray 安装完成</h1><p>OK，此时 V2Ray 已经安装完成了 。</p><p>V2Ray 配置信息，Shadowsocks 配置信息都有了</p><p>如果你使用过 Shadowsocks ，那么现在你可以测试一下 Shadowsocks 配置了，看看是否能正常使用。</p><p>如果你使用过 V2Ray 某些客户端，那么现在也可以测试一下配置了。</p><p>(备注，可能某些 V2Ray 客户端的选项或描述略有不同，但事实上，上面的 V2Ray 配置信息已经足够详细，由于客户端的不同，请对号入座。)</p><h1 id="V2Ray-管理面板"><a href="#V2Ray-管理面板" class="headerlink" title="V2Ray 管理面板"></a>V2Ray 管理面板</h1><p>现在可以尝试一下输入 <code>v2ray</code>回车，即可管理 V2Ray</p><h1 id="TCP-阻断"><a href="#TCP-阻断" class="headerlink" title="TCP 阻断"></a>TCP 阻断</h1><p>如果你觉得你的小鸡出现了这种情况，那么可以尝试使用 UDP 协议相关的 mKCP</p><p>当然，用了我的脚本那是很简单的啦，直接输入 <code>v2ray config</code>然后选择修改 V2Ray 传输协议</p><p>之后再选择 mKCP 相关的就行咯</p><p>备注：使用 mKCP 或许还可以提高速度，但由于 UDP 的原因也许会被运营商 Qos，这是无解的。</p><h1 id="快速管理-V2Ray"><a href="#快速管理-V2Ray" class="headerlink" title="快速管理 V2Ray"></a>快速管理 V2Ray</h1><p><code>v2ray info</code> 查看 V2Ray 配置信息 <code>v2ray config</code>修改 V2Ray 配置 <code>v2ray link</code> 生成 V2Ray 配置文件链接 <code>v2ray infolink</code> 生成 V2Ray 配置信息链接 <code>v2ray qr</code> 生成 V2Ray 配置二维码链接 <code>v2ray ss</code> 修改 Shadowsocks 配置 <code>v2ray ssinfo</code> 查看 Shadowsocks 配置信息 <code>v2ray ssqr</code>生成 Shadowsocks 配置二维码链接 <code>v2ray status</code> 查看 V2Ray 运行状态 <code>v2ray start</code>启动 V2Ray <code>v2ray stop</code> 停止 V2Ray <code>v2ray restart</code> 重启 V2Ray <code>v2ray log</code> 查看 V2Ray 运行日志 <code>v2ray update</code> 更新 V2Ray <code>v2ray update.sh</code> 更新 V2Ray 管理脚本 <code>v2ray uninstall</code> 卸载 V2Ray</p><h1 id="优化-V2Ray"><a href="#优化-V2Ray" class="headerlink" title="优化 V2Ray"></a>优化 V2Ray</h1><p>由于本人的脚本在CentOS 系统会自动开启 BBR 优化加速了，所以不需要再安装 BBR 优化了</p><p>如果你还是觉得网络比较慢的话，你可以尝试使用含有 mKCP 的传输协议，这个 mKCP 的东东，简单一点说就像 Kcptun 一样加速，并且还能进行伪装 (可选)，但是由于 mKCP 是使用 UDP 协议的，也许运营商会限速得更加厉害，网络变得更加慢。但不管怎么样，你都可以随时尝试一下。</p><p>服务器输入 <code>v2ray config</code>回车，然后选择 修改 V2Ray 传输协议，再接着选择 mKCP 相关的传输协议即可</p><p>如果你是使用其他商家的 VPS 并且是按照此教程流程来安装 V2Ray 的话，那么你可以输入 <code>v2ray bbr</code> 回车，然后选择安装 BBR 或者 锐速 来优化 V2Ray 只是还想再啰嗦一下，如果你是使用国际大厂的 VPS，并且是按照此教程流程来安装 V2Ray 的话，请自行在安全组 (防火墙) 开放端口和 UDP 协议 (如果你要使用含有 mKCP 的传输协议)</p><h1 id="WebSocket-TLS"><a href="#WebSocket-TLS" class="headerlink" title="WebSocket + TLS"></a>WebSocket + TLS</h1><p>在上述操作选择传输协议的时候，输入4回车。</p><p>在提示你选择绑定域名的地方输入你想绑定的域名，这里建议你输入一个子域名，即如果你的域名为peijy.top，你可以输入a.peijy.top。然后回车。</p><p>接下来，你需要将你的域名解析到你的VPS的IP上。这里以阿里云的域名为例。</p><p>完成后确定即可。</p><p>过几分钟之后，win+R打开cmd，然后ping一下你绑定的子域名，如果ping通，且会显示你的VPS的IP，那么你就解析成功了，如果不行就等一会再试。</p><p>接下来的安装caddy操作输入y，自动安装即可。</p><p>其余操作与TCP的一样，这里不再赘述。</p><p>注意：如果你的安装后面会出现caddy安装失败，是因为没有自动解压caddy安装包，这里可以手动操作。</p><p>首先，cd到你的根目录“/”，操作为cd ..</p><p>接着输入cd tmp/install_caddy来进入存放caddy安装文件的文件夹。当然，若你的安装文件不在这里，你可以输入find -name caddy.tar.gz来找到存放位置。</p><p>输入gunzip caddy.tar.gz来第一步解压</p><p>输入tar -xvf caddy.tar来第二步解压</p><p>完成如上操作后，再使用v2ray安装指令安装即可顺利成功了。</p><h1 id="V2Ray-多用户"><a href="#V2Ray-多用户" class="headerlink" title="V2Ray 多用户"></a>V2Ray 多用户</h1><p>使用 cat /proc/sys/kernel/random/uuid 来创建一个新的用户id。</p><p>然后，输入vim etc/v2ray/config.json来修改配置文件。</p><p>复制clients后的中括号内容，在原有中括号后加+后粘贴，然后将id改为你刚才创建的新id即可。</p><p>若想创建不同端口的多用户，就将inbounds后的中括号复制，然后对应端口修改一下，id改一下，其他内容一样。该操作下需要再开放一下新的端口</p><p><code>firewall-cmd --zone=public --add-port=5672/tcp --permanent</code></p><p>（将5672改为你新加的端口号即可。）</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以上就是本文的全部内容啦，如果你一次不会，就再来几次，总会成功的哦 ヾ(≧▽≦*)o</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>V2Ray</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CSAPP 习题3.4</title>
+    <link href="/2020/07/23/csapp-%E4%B9%A0%E9%A2%983-4/"/>
+    <url>/2020/07/23/csapp-%E4%B9%A0%E9%A2%983-4/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>假设变量sp和dp被声明为类型</p><p>src_t *sp;<br>dest_t *dp;<br>这里src_t和dest_t是用typedef声明的数据类型。我们想使用适当的数据传送指令来实现下面的操作<br>*dp = (dest_t) *sp;</p><p>假设sp和dp的值分别存储在寄存器%rdi和%rsi中。对于表中的每个表项，给出实现指令数据传送的两条指令。其中第一条指令应该从内存中读数，做适当的转换，并设置寄存器%rax的适当部分。然后，第二条指令要把%rax的适当部分写到内存。在这两种情况中，寄存器的部分可以使%rax、%eax、%ax或%al，两者可以互不相同。<br>记住，当执行强制类型转换既涉及大小变化又涉及C语言中符号变化时，操作应先改变大小。</p><p>src_t</p><p>dest_t</p><p>指令</p><p>long</p><p>long</p><p>movq (%rdi),%rax<br>movq %rax,(%rsi)</p><p>char</p><p>int</p><p> </p><p>char</p><p>unsigned</p><p> </p><p>unsigned char</p><p>long</p><p> </p><p>int</p><p>char</p><p> </p><p>unsigned</p><p>unsigned char</p><p> </p><p>char</p><p>short</p><p> </p><h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>这个题目本身不难，但是有一点很绕，什么时候用符号扩展传送指令，什么时候用零扩展传送指令</p><p>首先，根据左右两个的最大长度来判断是%rax、%eax、%ax还是%al。如：char是一字节，int是双字，所以用%eax；char是一字节，short是一字，所以用%ax。</p><p>我们一行一行解答</p><p>1. char -&gt; int</p><p>首先char是有符号类型，int也是有符号类型，所以可以肯定需要符号扩展传送指令，由于char是1字节，而int是是双字，所以结果应该为<br>movsbl (%rdi),%eax<br>movq %eax,(%rsi)</p><p>2. char -&gt; unsigned</p><p>由于char是有符号类型，unsigned是无符号类型，那么一个有符号一个无符号，我怎么选择扩展指令呢，这是题目的那句，记住，当执行强制类型转换既涉及大小变化又涉及C语言中符号变化时，操作应先改变大小。，所以我们应该先改变大小，改变有符号数的大小还是应该用movqs指令，所以结果与上面相同，<br>movsbl (%rdi),%eax<br>movq %eax,(%rsi)</p><p>3. unsigned char -&gt; long</p><p>现在又来了，第一个是无符号数，第二个是有符号数，第一个是一字节，第二个是4字，根据上面的原则应该先改变大小，<br>movzbq (%rdi),%eax<br>movq %rax,(%rsi),<br>等等为什么答案不对，为什么答案是<br>movzbl(%rdi),%eax<br>movq %rax,(%rsi)<br>课本P123页给出，movl指令以寄存器作为目的时，它会把该寄存器的高位4字节设置为0。大意是把32位扩展到64位。</p><p>4. int -&gt; char</p><p>这个基本上就没有什么要讲的了，int有符号，char有符号，也不需要扩展，<br>movl (%rdi),%eax<br>movq %al,(%rsi)</p><p>5. unsigned -&gt; unsigned char</p><p>这个答案也很简单，<br>movl (%rdi),%eax<br>movq %al,(%rsi)</p><p>6. char -&gt; short</p><p>这个也不难了，char是有符号一个字节，short是有符号的一个字，所以答案是<br>movsbw (%rdi),%ax<br>movw %ax,(%rsi)</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>考研计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>csapp</tag>
+      
+      <tag>考研</tag>
+      
+      <tag>考研计算机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>主题分享</title>
+    <link href="/2020/07/22/%E4%B8%BB%E9%A2%98%E5%88%86%E4%BA%AB/"/>
+    <url>/2020/07/22/%E4%B8%BB%E9%A2%98%E5%88%86%E4%BA%AB/</url>
+    
+    <content type="html"><![CDATA[<p>&gt;2021-4-3更新，主题已换为sakura主题 &gt; &gt;下载链接：`<a href="https://github.com/mashirozx/Sakura/archive/refs/tags/v3.3.9.zip/%60">https://github.com/mashirozx/Sakura/archive/refs/tags/v3.3.9.zip\`</a></p><p>本主题使用的是小白~白的主题，为了方便下载，提供非github版下载链接。</p><p>蓝奏云下载链接： <a href="https://wws.lanzous.com/iJBNlevew6h">https://wws.lanzous.com/iJBNlevew6h</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>WP美化</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>wp主题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>整数寄存器</title>
+    <link href="/2020/07/22/%E6%95%B4%E6%95%B0%E5%AF%84%E5%AD%98%E5%99%A8/"/>
+    <url>/2020/07/22/%E6%95%B4%E6%95%B0%E5%AF%84%E5%AD%98%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<p>[img]<a href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083239.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083239.png\[/img\]</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>考研计算机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>csapp</tag>
+      
+      <tag>考研</tag>
+      
+      <tag>考研计算机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Pycharm、Idea的破解</title>
+    <link href="/2020/05/22/pycharm%E3%80%81idea%E7%9A%84%E7%A0%B4%E8%A7%A3/"/>
+    <url>/2020/05/22/pycharm%E3%80%81idea%E7%9A%84%E7%A0%B4%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p>链接：<a href="https://ww.lanzous.com/icwf5qf">https://ww.lanzous.com/icwf5qf</a></p><ol><li> 首先，将下载的文件解压，将里面的jetbrains-agent.jar放到Pycharm或Idea的bin文件下（为了方便查找）</li><li>启动你的IDE，如果上来就需要注册，选择：试用（Evaluate for free）进入IDE。<br> 如果你的IDE试用已过期可以使用reset_eval文件夹内的脚本重置一下。</li><li>将 jetbrains-agent.jar 拖进IDE窗口（或者当作IDE插件安装），点 “Restart” 按钮重启IDE。<br> （事实上你拖 jetbrains-agent-latest.zip 进去IDE窗口也没问题）</li><li> 在弹出的JetbrainsAgent Helper对话框中，选择激活方式，点击安装按钮。</li><li>重启IDE，搞定。<br> x. 支持两种注册方式：License server 和 Activation code:<br> 1). 选择License server方式，地址填入：<a href="https://fls.jetbrains-agent.com/">https://fls.jetbrains-agent.com</a> （HTTP也可用，网络不佳用第2种方式）<br> 2). 选择Activation code方式离线激活，请使用：ACTIVATION_CODE.txt 内的注册码激活<br> License key is in legacy format == Key invalid，表示agent配置未生效。<br> 如果你需要自定义License name，请访问：<a href="https://zhile.io/custom-license.html">https://zhile.io/custom-license.html</a><br> 3). 现在你可以使用jetbrains-agent + activation code/license server激活jetbrains平台的付费插件了！<br> 现有Jetbrains付费插件Activation code: <a href="https://zhile.io/jetbrains-paid-plugins-license.html">https://zhile.io/jetbrains-paid-plugins-license.html</a><br> 现在有这些付费插件：<a href="https://plugins.jetbrains.com/search?isPaid=true">https://plugins.jetbrains.com/search?isPaid=true</a></li></ol><p>本方法支持2020.1版本，其他自测</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>软件破解</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>破解</tag>
+      
+      <tag>计算机</tag>
+      
+      <tag>软件破解</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>程序安装包无法运行</title>
+    <link href="/2020/02/21/%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/"/>
+    <url>/2020/02/21/%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85%E5%8C%85%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C/</url>
+    
+    <content type="html"><![CDATA[<h4 id="许多程序，如驱动精灵、迅雷等应用从官网下载后，双击安装包无法运行的情况，可能是由电脑上的自装杀毒软件，如火绒、360等将该类软件判断为不安全软件导致的，解决方案为将该类软件删除即可"><a href="#许多程序，如驱动精灵、迅雷等应用从官网下载后，双击安装包无法运行的情况，可能是由电脑上的自装杀毒软件，如火绒、360等将该类软件判断为不安全软件导致的，解决方案为将该类软件删除即可" class="headerlink" title="许多程序，如驱动精灵、迅雷等应用从官网下载后，双击安装包无法运行的情况，可能是由电脑上的自装杀毒软件，如火绒、360等将该类软件判断为不安全软件导致的，解决方案为将该类软件删除即可"></a>许多程序，如驱动精灵、迅雷等应用从官网下载后，双击安装包无法运行的情况，可能是由电脑上的自装杀毒软件，如火绒、360等将该类软件判断为不安全软件导致的，解决方案为将该类软件删除即可</h4>]]></content>
+    
+    
+    <categories>
+      
+      <category>电脑问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算机</tag>
+      
+      <tag>故障</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>建站了o((&gt;ω&lt; ))o</title>
+    <link href="/2020/02/18/%E5%BB%BA%E7%AB%99%E4%BA%86o%CF%89-o/"/>
+    <url>/2020/02/18/%E5%BB%BA%E7%AB%99%E4%BA%86o%CF%89-o/</url>
+    
+    <content type="html"><![CDATA[<p>欢迎来到我的个人网站ヾ(≧▽≦*)o</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>我</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>建站</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
   
 </search>

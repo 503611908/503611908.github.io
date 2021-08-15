@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>V2Ray搭建详细教程 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="V2Ray搭建详细教程">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-07-26 19:04" pubdate>
+        2020年7月26日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">V2Ray搭建详细教程</h1>
+            
+            <div class="markdown-body">
+              <p>[toc]</p>
+<h2 id="本教程参考233boy大佬的教程："><a href="#本教程参考233boy大佬的教程：" class="headerlink" title="本教程参考233boy大佬的教程："></a>本教程参考233boy大佬的教程：</h2><p><a target="_blank" rel="noopener" href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B">V2Ray搭建详细教程</a></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>此 V2Ray 教程完完全全是为小白准备的，从购买 VPS 到使用 SSH 登录并使用 V2Ray 一键安装脚本配置 V2Ray，详细的图文教程确保你可以百分百成功搭建 V2Ray 使用，哪怕你只是一个小白。 由于 V2Ray 的配置对于小白来说是非常不友好的，所以此 V2Ray 教程的 V2Ray 服务器端配置将会使用233boy大佬撰写的<a target="_blank" rel="noopener" href="https://github.com/233boy/v2ray/wiki/V2Ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC">V2Ray 一键安装脚本</a>，这是一个对小白友好的 V2Ray 一键脚本，简化 V2Ray 安装和部署，并且自动开启 BBR 优化，当然你也可以手动打开 BBR 来优化 V2Ray，也可以选择使用锐速来 优化 V2Ray。</p>
+<h1 id="V2Ray-简介"><a href="#V2Ray-简介" class="headerlink" title="V2Ray 简介"></a>V2Ray 简介</h1><p>官网：<a target="_blank" rel="noopener" href="https://www.v2ray.com/">https://www.v2ray.com</a><a target="_blank" rel="noopener" href="https://www.v2ray.com/">V2Ray(Project V)</a> 相对于 Shadowsocks，V2Ray 更像全能选手，拥有更多可选择的协议 / 传输载体 (Socks、HTTP、TLS、TCP、mKCP、WebSocket )，还有强大的路由功能，不仅仅于此，它亦包含 Shadowsocks 组件，你只需要安装 V2Ray，你就可以使用所有的 V2Ray 相关的特性包括使用 Shadowsocks，由于 V2Ray 是使用 GO 语言所撰写的，天生的平台部署优势，下载即可使用，当然啦，由于 V2Ray 的配置相对来说是很繁琐的，毫无夸张的说，但是有了本人所写的<a target="_blank" rel="noopener" href="https://github.com/233boy/v2ray/wiki/V2Ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC">V2Ray 一键安装脚本</a>加持下，使用 V2Ray 便会显得轻松多了。</p>
+<h1 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h1><h3 id="总结一下此文章的大致流程，此-V2Ray-教程可百分百帮助你搭建-V2Ray-使用。哪怕你只是一个小白。"><a href="#总结一下此文章的大致流程，此-V2Ray-教程可百分百帮助你搭建-V2Ray-使用。哪怕你只是一个小白。" class="headerlink" title="总结一下此文章的大致流程，此 V2Ray 教程可百分百帮助你搭建 V2Ray 使用。哪怕你只是一个小白。"></a>总结一下此文章的大致流程，此 V2Ray 教程可百分百帮助你搭建 V2Ray 使用。哪怕你只是一个小白。</h3><h4 id="安装-SSH客户端"><a href="#安装-SSH客户端" class="headerlink" title="安装 SSH客户端"></a>安装 SSH客户端</h4><p>要登录 VPS，当然需要 SSH 客户端 #### 登录 VPS</p>
+<p>使用 Xshell 配置 VPS SSH 信息，然后登录 #### 安装 V2Ray</p>
+<p>安装过程你可以随意选择你喜欢的传输协议或者配置 Shadowsocks #### V2Ray 安装完成</p>
+<p>此时你可以使用客户端配置 V2Ray 使用了 #### V2Ray 高级玩法</p>
+<p>配置 WebSocket + TLS ， HTTP/2 ， mKCP 等 # 安装SSH客户端</p>
+<p>大部分人推荐的SSH客户端一般都为Xshell，但经过我的亲身体验，我推荐使用FinalShell。一般购买VPS后使用Xshell连接时都会碰到一个常见的问题，那就是出现10053错误以致连接不上，而FinalShell不仅有海外服务器加速，还提供了图形界面的文件操作，这对很多不习惯vim操作的萌新是很友好的。<a target="_blank" rel="noopener" href="http://www.hostbuf.com/t/988.html">下载地址</a># 安装 V2Ray</p>
+<h3 id="为安装V2Ray，首先输入以下指令安装一些工具："><a href="#为安装V2Ray，首先输入以下指令安装一些工具：" class="headerlink" title="为安装V2Ray，首先输入以下指令安装一些工具："></a>为安装V2Ray，首先输入以下指令安装一些工具：</h3><p>centos用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install wget curl<br></code></pre></td></tr></table></figure>
+
+<p>debain、ubuntu用:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt-get install wget curl<br></code></pre></td></tr></table></figure>
+
+<h3 id="接下来就是安装环节了。"><a href="#接下来就是安装环节了。" class="headerlink" title="接下来就是安装环节了。"></a>接下来就是安装环节了。</h3><p>输入下面命令回车，你可以复制过去，然后在 Finalshell 界面按 Ctrl + Shift + V 即可粘贴，不能按 Ctrl + V 的。。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -s -L https://git.io/v2ray.sh)<br></code></pre></td></tr></table></figure>
+
+<p>然后选择安装，即是输入 1 回车</p>
+<p>选择传输协议，如果没有特别的需求，使用默认的 TCP 传输协议即可，直接回车</p>
+<p>选择端口，如果没有特别的需求，使用默认的端口即可，直接回车</p>
+<p>是否屏蔽广告，除非你真的需要，一般来说，直接回车即可 。因为我有域名，所以我选择的是ws+tls传输协议，这个后面讲一下如何来操作。</p>
+<p>是否配置 Shadowsocks ，如果不需要就直接回车，否则就输入 Y 回车</p>
+<p>Shadowsocks 端口，密码，加密方式这些东西自己看情况配置即可，我个人当然是全部直接回车。。</p>
+<p>OK，按回车继续</p>
+<p>安装信息，如果确保没有什么问题了，按回车继续</p>
+<p>(备注，安装信息会因你的配置而变化..不用在乎这截图)</p>
+<p>(备注，由于我懒…脚本显示的一些信息可能会跟上面的截图有少许不同，但实际上都是很简单明了的)</p>
+<h1 id="V2Ray-安装完成"><a href="#V2Ray-安装完成" class="headerlink" title="V2Ray 安装完成"></a>V2Ray 安装完成</h1><p>OK，此时 V2Ray 已经安装完成了 。</p>
+<p>V2Ray 配置信息，Shadowsocks 配置信息都有了</p>
+<p>如果你使用过 Shadowsocks ，那么现在你可以测试一下 Shadowsocks 配置了，看看是否能正常使用。</p>
+<p>如果你使用过 V2Ray 某些客户端，那么现在也可以测试一下配置了。</p>
+<p>(备注，可能某些 V2Ray 客户端的选项或描述略有不同，但事实上，上面的 V2Ray 配置信息已经足够详细，由于客户端的不同，请对号入座。)</p>
+<h1 id="V2Ray-管理面板"><a href="#V2Ray-管理面板" class="headerlink" title="V2Ray 管理面板"></a>V2Ray 管理面板</h1><p>现在可以尝试一下输入 <code>v2ray</code>回车，即可管理 V2Ray</p>
+<h1 id="TCP-阻断"><a href="#TCP-阻断" class="headerlink" title="TCP 阻断"></a>TCP 阻断</h1><p>如果你觉得你的小鸡出现了这种情况，那么可以尝试使用 UDP 协议相关的 mKCP</p>
+<p>当然，用了我的脚本那是很简单的啦，直接输入 <code>v2ray config</code>然后选择修改 V2Ray 传输协议</p>
+<p>之后再选择 mKCP 相关的就行咯</p>
+<p>备注：使用 mKCP 或许还可以提高速度，但由于 UDP 的原因也许会被运营商 Qos，这是无解的。</p>
+<h1 id="快速管理-V2Ray"><a href="#快速管理-V2Ray" class="headerlink" title="快速管理 V2Ray"></a>快速管理 V2Ray</h1><p><code>v2ray info</code> 查看 V2Ray 配置信息 <code>v2ray config</code>修改 V2Ray 配置 <code>v2ray link</code> 生成 V2Ray 配置文件链接 <code>v2ray infolink</code> 生成 V2Ray 配置信息链接 <code>v2ray qr</code> 生成 V2Ray 配置二维码链接 <code>v2ray ss</code> 修改 Shadowsocks 配置 <code>v2ray ssinfo</code> 查看 Shadowsocks 配置信息 <code>v2ray ssqr</code>生成 Shadowsocks 配置二维码链接 <code>v2ray status</code> 查看 V2Ray 运行状态 <code>v2ray start</code>启动 V2Ray <code>v2ray stop</code> 停止 V2Ray <code>v2ray restart</code> 重启 V2Ray <code>v2ray log</code> 查看 V2Ray 运行日志 <code>v2ray update</code> 更新 V2Ray <code>v2ray update.sh</code> 更新 V2Ray 管理脚本 <code>v2ray uninstall</code> 卸载 V2Ray</p>
+<h1 id="优化-V2Ray"><a href="#优化-V2Ray" class="headerlink" title="优化 V2Ray"></a>优化 V2Ray</h1><p>由于本人的脚本在CentOS 系统会自动开启 BBR 优化加速了，所以不需要再安装 BBR 优化了</p>
+<p>如果你还是觉得网络比较慢的话，你可以尝试使用含有 mKCP 的传输协议，这个 mKCP 的东东，简单一点说就像 Kcptun 一样加速，并且还能进行伪装 (可选)，但是由于 mKCP 是使用 UDP 协议的，也许运营商会限速得更加厉害，网络变得更加慢。但不管怎么样，你都可以随时尝试一下。</p>
+<p>服务器输入 <code>v2ray config</code>回车，然后选择 修改 V2Ray 传输协议，再接着选择 mKCP 相关的传输协议即可</p>
+<p>如果你是使用其他商家的 VPS 并且是按照此教程流程来安装 V2Ray 的话，那么你可以输入 <code>v2ray bbr</code> 回车，然后选择安装 BBR 或者 锐速 来优化 V2Ray 只是还想再啰嗦一下，如果你是使用国际大厂的 VPS，并且是按照此教程流程来安装 V2Ray 的话，请自行在安全组 (防火墙) 开放端口和 UDP 协议 (如果你要使用含有 mKCP 的传输协议)</p>
+<h1 id="WebSocket-TLS"><a href="#WebSocket-TLS" class="headerlink" title="WebSocket + TLS"></a>WebSocket + TLS</h1><p>在上述操作选择传输协议的时候，输入4回车。</p>
+<p>在提示你选择绑定域名的地方输入你想绑定的域名，这里建议你输入一个子域名，即如果你的域名为peijy.top，你可以输入a.peijy.top。然后回车。</p>
+<p>接下来，你需要将你的域名解析到你的VPS的IP上。这里以阿里云的域名为例。</p>
+<p>完成后确定即可。</p>
+<p>过几分钟之后，win+R打开cmd，然后ping一下你绑定的子域名，如果ping通，且会显示你的VPS的IP，那么你就解析成功了，如果不行就等一会再试。</p>
+<p>接下来的安装caddy操作输入y，自动安装即可。</p>
+<p>其余操作与TCP的一样，这里不再赘述。</p>
+<p>注意：如果你的安装后面会出现caddy安装失败，是因为没有自动解压caddy安装包，这里可以手动操作。</p>
+<p>首先，cd到你的根目录“/”，操作为cd ..</p>
+<p>接着输入cd tmp/install_caddy来进入存放caddy安装文件的文件夹。当然，若你的安装文件不在这里，你可以输入find -name caddy.tar.gz来找到存放位置。</p>
+<p>输入gunzip caddy.tar.gz来第一步解压</p>
+<p>输入tar -xvf caddy.tar来第二步解压</p>
+<p>完成如上操作后，再使用v2ray安装指令安装即可顺利成功了。</p>
+<h1 id="V2Ray-多用户"><a href="#V2Ray-多用户" class="headerlink" title="V2Ray 多用户"></a>V2Ray 多用户</h1><p>使用 cat /proc/sys/kernel/random/uuid 来创建一个新的用户id。</p>
+<p>然后，输入vim etc/v2ray/config.json来修改配置文件。</p>
+<p>复制clients后的中括号内容，在原有中括号后加+后粘贴，然后将id改为你刚才创建的新id即可。</p>
+<p>若想创建不同端口的多用户，就将inbounds后的中括号复制，然后对应端口修改一下，id改一下，其他内容一样。该操作下需要再开放一下新的端口</p>
+<p><code>firewall-cmd --zone=public --add-port=5672/tcp --permanent</code></p>
+<p>（将5672改为你新加的端口号即可。）</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以上就是本文的全部内容啦，如果你一次不会，就再来几次，总会成功的哦 ヾ(≧▽≦*)o</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/V2Ray/">V2Ray</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/08/03/vps%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">VPS测试脚本</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/23/csapp-%E4%B9%A0%E9%A2%983-4/">
+                        <span class="hidden-mobile">CSAPP 习题3.4</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,507 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>手把手教你搭建私人离线下载神器Aria2，搭配Rclone自动上传至网盘 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="手把手教你搭建私人离线下载神器Aria2，搭配Rclone自动上传至网盘">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-08-02 11:03" pubdate>
+        2021年8月2日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      38
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">手把手教你搭建私人离线下载神器Aria2，搭配Rclone自动上传至网盘</h1>
+            
+            <div class="markdown-body">
+              <p>[toc]</p>
+<h3 id="原作者链接"><a href="#原作者链接" class="headerlink" title="原作者链接"></a><a target="_blank" rel="noopener" href="https://blog.laoda.de/archives/aria2-rclone-filebrowser#toc-head-16">原作者链接</a></h3><h2 id="安装Aria2增强版"><a href="#安装Aria2增强版" class="headerlink" title="安装Aria2增强版"></a>安装Aria2增强版</h2><p>为了避免出错，安装下面的基础组件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt install sudo wget curl ca-certificates<br></code></pre></td></tr></table></figure>
+
+<p>运行安装脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -N git.io/aria2.sh &amp;&amp; chmod +x aria2.sh<br></code></pre></td></tr></table></figure>
+
+<p>启动Aria2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./aria2.sh<br></code></pre></td></tr></table></figure>
+
+<p>配置Aria2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">Aria2 一键安装管理脚本 增强版 [v2.7.4] by P3TERX.COM<br><br>  0. 升级脚本<br> ———————————————————————<br>  1. 安装 Aria2<br>  2. 更新 Aria2<br>  3. 卸载 Aria2<br> ———————————————————————<br>  4. 启动 Aria2<br>  5. 停止 Aria2<br>  6. 重启 Aria2<br> ———————————————————————<br>  7. 修改 配置<br>  8. 查看 配置<br>  9. 查看 日志<br> 10. 清空 日志<br> ———————————————————————<br> 11. 手动更新 BT-Tracker<br> 12. 自动更新 BT-Tracker<br> ———————————————————————<br><br> Aria2 状态: 已安装  已启动<br><br> 自动更新 BT-Tracker: 已开启<br><br> 请输入数字 [0-12]:<br></code></pre></td></tr></table></figure>
+
+<h2 id="配置Rclone（以下来自twovps的教程整理）"><a href="#配置Rclone（以下来自twovps的教程整理）" class="headerlink" title="配置Rclone（以下来自twovps的教程整理）"></a>配置Rclone（以下来自twovps的教程整理）</h2><p>以下分为三小步这里做个简介：第一步是PC端获取网盘授权的令牌；第二步是在VPS里绑定获得的授权；第三步才是自动上传配置。因为OneDrive的授权需要在浏览器打开，而VPS没有图形界面，只能先在PC端获取授权，所以第一步和第二步有点重复。</p>
+<h3 id="1、窗口（PC）端安装Rclone"><a href="#1、窗口（PC）端安装Rclone" class="headerlink" title="1、窗口（PC）端安装Rclone"></a>1、窗口（PC）端安装Rclone</h3><p>登录<a target="_blank" rel="noopener" href="https://rclone.org/downloads/">rclone</a>网官下载Rclone的窗户端的客户。 [img]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165214.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165214.png\[/img\]</a> 下载解压将里面的<code>rclone.exe</code>移动到本地<code>C:\Windows\System32</code>下这个目录，其它的可以删掉没关系 按<code>win + R</code>快捷键打开运行，输入<code>cmd</code>确定来打开CMD窗口，输入下面命令开始配置 。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">rclone config<br></code></pre></td></tr></table></figure>
+
+<p>然后出现如下界面，提示按输入<code>n</code>回车创建个新的远程，然后提示输入name，名称随意但要记住，这里我填<code>eutaboo</code>。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Current remotes:<br><br>Name                 <span class="hljs-built_in">Type</span><br>====                 ====<br><br>e) Edit existing remote<br>n) New remote<br>d) Delete remote<br>r) <span class="hljs-built_in">Rename</span> remote<br>c) <span class="hljs-built_in">Copy</span> remote<br>s) <span class="hljs-built_in">Set</span> configuration password<br>q) Quit config<br>e/n/d/r/c/s/q&gt; n<br>name&gt; eutaboo<br></code></pre></td></tr></table></figure>
+
+<p>回车后出现一长串网盘列表让你选，这里我们要绑定的是OneDrive， 其它网盘绑定教程我就不说了， 可以看到OneDrive是26，那就填入26回车，不同版本数字排序可能会变化，请自主确认，你也可以绑定列表中其它网盘。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">Type</span> of storage to configure.<br>Enter a string value. Press Enter <span class="hljs-keyword">for</span> the default (&quot;&quot;).<br>Choose a number from below, or <span class="hljs-built_in">type</span> <span class="hljs-keyword">in</span> your own value<br> <span class="hljs-number">1</span> / <span class="hljs-number">1</span>Fichier<br>   \ &quot;fichier&quot;<br> <span class="hljs-number">2</span> / Alias <span class="hljs-keyword">for</span> an existing remote<br>   \ &quot;alias&quot;<br> <span class="hljs-number">3</span> / Amazon Drive<br>   \ &quot;amazon cloud drive&quot;<br> <span class="hljs-number">4</span> / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, SeaweedFS, and Tencent COS<br>   \ &quot;s3&quot;<br> <span class="hljs-number">5</span> / Backblaze B2<br>   \ &quot;b2&quot;<br> <span class="hljs-number">6</span> / Box<br>   \ &quot;box&quot;<br> <span class="hljs-number">7</span> / Cache a remote<br>   \ &quot;cache&quot;<br> <span class="hljs-number">8</span> / Citrix Sharefile<br>   \ &quot;sharefile&quot;<br> <span class="hljs-number">9</span> / Compress a remote<br>   \ &quot;compress&quot;<br><span class="hljs-number">10</span> / Dropbox<br>   \ &quot;dropbox&quot;<br><span class="hljs-number">11</span> / Encrypt/Decrypt a remote<br>   \ &quot;crypt&quot;<br><span class="hljs-number">12</span> / Enterprise File Fabric<br>   \ &quot;filefabric&quot;<br><span class="hljs-number">13</span> / FTP Connection<br>   \ &quot;ftp&quot;<br><span class="hljs-number">14</span> / Google Cloud Storage (this is <span class="hljs-keyword">not</span> Google Drive)<br>   \ &quot;google cloud storage&quot;<br><span class="hljs-number">15</span> / Google Drive<br>   \ &quot;drive&quot;<br><span class="hljs-number">16</span> / Google Photos<br>   \ &quot;google photos&quot;<br><span class="hljs-number">17</span> / Hadoop distributed file system<br>   \ &quot;hdfs&quot;<br><span class="hljs-number">18</span> / Hubic<br>   \ &quot;hubic&quot;<br><span class="hljs-number">19</span> / <span class="hljs-keyword">In</span> memory object storage system.<br>   \ &quot;memory&quot;<br><span class="hljs-number">20</span> / Jottacloud<br>   \ &quot;jottacloud&quot;<br><span class="hljs-number">21</span> / Koofr<br>   \ &quot;koofr&quot;<br><span class="hljs-number">22</span> / Local Disk<br>   \ &quot;local&quot;<br><span class="hljs-number">23</span> / Mail.ru Cloud<br>   \ &quot;mailru&quot;<br><span class="hljs-number">24</span> / Mega<br>   \ &quot;mega&quot;<br><span class="hljs-number">25</span> / Microsoft Azure Blob Storage<br>   \ &quot;azureblob&quot;<br><span class="hljs-number">26</span> / Microsoft OneDrive<br>   \ &quot;onedrive&quot;<br><span class="hljs-number">27</span> / OpenDrive<br>   \ &quot;opendrive&quot;<br><span class="hljs-number">28</span> / OpenStack Swift (Rackspace Cloud Files, Memset Memstore, OVH)<br>   \ &quot;swift&quot;<br><span class="hljs-number">29</span> / Pcloud<br>   \ &quot;pcloud&quot;<br><span class="hljs-number">30</span> / Put.io<br>   \ &quot;putio&quot;<br><span class="hljs-number">31</span> / QingCloud Object Storage<br>   \ &quot;qingstor&quot;<br><span class="hljs-number">32</span> / SSH/SFTP Connection<br>   \ &quot;sftp&quot;<br><span class="hljs-number">33</span> / Sugarsync<br>   \ &quot;sugarsync&quot;<br><span class="hljs-number">34</span> / Tardigrade Decentralized Cloud Storage<br>   \ &quot;tardigrade&quot;<br><span class="hljs-number">35</span> / Transparently chunk/split large files<br>   \ &quot;chunker&quot;<br><span class="hljs-number">36</span> / Union merges the contents of several upstream <span class="hljs-built_in">fs</span><br>   \ &quot;union&quot;<br><span class="hljs-number">37</span> / Uptobox<br>   \ &quot;uptobox&quot;<br><span class="hljs-number">38</span> / Webdav<br>   \ &quot;webdav&quot;<br><span class="hljs-number">39</span> / Yandex Disk<br>   \ &quot;yandex&quot;<br><span class="hljs-number">40</span> / Zoho<br>   \ &quot;zoho&quot;<br><span class="hljs-number">41</span> / http Connection<br>   \ &quot;http&quot;<br><span class="hljs-number">42</span> / premiumize.me<br>   \ &quot;premiumizeme&quot;<br><span class="hljs-number">43</span> / seafile<br>   \ &quot;seafile&quot;<br>Storage&gt; <span class="hljs-number">26</span><br></code></pre></td></tr></table></figure>
+
+<p>接着<code>client_id</code>和<code>client_secret</code>直接不填回车</p>
+<p><code>Edit advanced config?</code>输入<code>n</code>回车</p>
+<p><code>Already have a token - refresh?</code> 输入<code>y</code>回车，后面VPS里配置时是没有这个提示的，会出现下个自动配置选项，别手快直接y</p>
+<p><code>Use auto config?</code>这里输入<code>y</code>回车，后面VPS配置时这步要选 n 具体操作如下：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Microsoft App Client Id<br>Leave blank normally.<br>Enter a string value. Press Enter <span class="hljs-keyword">for</span> the default (&quot;&quot;).<br>client_id&gt;<br>Microsoft App Client Secret<br>Leave blank normally.<br>Enter a string value. Press Enter <span class="hljs-keyword">for</span> the default (&quot;&quot;).<br>client_secret&gt;<br>Edit advanced config? (y/n) <br>y) Yes<br>n) No<br>y/n&gt; n<br>Remote config <br>Already have a token - refresh?  <br>y) Yes<br>n) No<br>y/n&gt; y<br>Use auto config?  <br> * Say Y <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> sure<br> * Say N <span class="hljs-keyword">if</span> you are working on a remote or headless machine<br>y) Yes<br>n) No<br>y/n&gt; y<br></code></pre></td></tr></table></figure>
+
+<p>接着浏览器会自动弹出窗口，然后登录你要挂载的OneDrive账号，征求许可接受就行了 授权成功后返回cmd窗口出现以下界面，这里选<code>1</code>回车。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Choose a number from below, or <span class="hljs-built_in">type</span> <span class="hljs-keyword">in</span> an existing value<br> <span class="hljs-number">1</span> / OneDrive Personal or Business  #个人和商用<br>   \ &quot;onedrive&quot;<br> <span class="hljs-number">2</span> / Root Sharepoint site<br>   \ &quot;sharepoint&quot;<br> <span class="hljs-number">3</span> / <span class="hljs-built_in">Type</span> <span class="hljs-keyword">in</span> driveID<br>   \ &quot;driveid&quot;<br> <span class="hljs-number">4</span> / <span class="hljs-built_in">Type</span> <span class="hljs-keyword">in</span> SiteID<br>   \ &quot;siteid&quot;<br> <span class="hljs-number">5</span> / Search a Sharepoint site<br>   \ &quot;search&quot;<br>Your choice&gt;<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>提示找到一个驱动器，让你选择，这里就一个选项 0，那就填入<code>0</code>回车，然后问你是否确定，选<code>y</code>回车。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Found <span class="hljs-number">1</span> drives, please select the one you want to use:<br><span class="hljs-number">0</span>: OneDrive (business) id=huioaeuiaeagioioieuiaaefe@#%gaege94#<br>Chose drive to use:&gt;<span class="hljs-number">0</span><br>Found drive &#x27;root&#x27; of <span class="hljs-built_in">type</span> &#x27;business&#x27;, URL:https://jxjjxy-my.sharepoint.com/personal/meeaghvp_t_odmail_cn/Documents<br>Is that okay?<br>y) Yes<br>n) No<br>y/n&gt; y<br></code></pre></td></tr></table></figure>
+
+<p>接着会出现一串长令牌，PC端的操作全是为了这个令牌，将下图红框内的整个复制，复制范围<code>&#123;&quot;access_token&quot;:…………………………2019-04-21T16:41:25.1595637+08:00&quot;&#125;</code>保存好，以后就可以省了这步PC端操作，下面就回到SSH操作。</p>
+<h3 id="2-、VPS安装Rclone"><a href="#2-、VPS安装Rclone" class="headerlink" title="2 、VPS安装Rclone"></a>2 、VPS安装Rclone</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl https://rclone.org/install.sh  sudo bash  <span class="hljs-comment">#安装Rclone</span><br>rclone config  <span class="hljs-comment">#配置Rclone</span><br></code></pre></td></tr></table></figure>
+
+<p>上面输入完<code>rclone config</code>回车后的过程跟前面在PC端的配置步骤基本一样，这里就不复述了，到了<code>Use auto config?</code>问你是否使用自动配置这步不同，这里选<code>n</code> 回车，然后在出现的<code>result&gt;</code>后面粘贴上前面获得的token然后回车，接着会有几个确认，按提示填<code>y</code>就行，直到又回到下图配置开头界面，输入<code>q</code>回车退出配置即可，到此我们完成了网盘的授权。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">Name                 Type<br>====                 ====<br>onedrive             onedrive<br><br>e) Edit existing remote<br>n) New remote<br>d) Delete remote<br>r) Rename remote<br>c) Copy remote<br>s) Set configuration password<br>q) Quit config<br>e/n/d/r/c/s/q&gt; q<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>提示: 以上两步就是为了得到token，并在VPS里创建一个<code>rclone.conf</code>配置文件，该配置文件目录在<code>root/.config/rclone/rclone.conf</code>，可以将这个文件下载到本地，以后如果重装只要在VPS上安装好rclone，再将这个配置文件放进这个目录即可，省去繁琐配置过程。</p>
+</blockquote>
+<h3 id="3、自动上传设置"><a href="#3、自动上传设置" class="headerlink" title="3、自动上传设置"></a>3、自动上传设置</h3><p>因为挂载了其实最终的目的还是转移到自己的云盘空间中，vps 的硬盘能有多大，要折腾都是在云盘中。如果你是土豪当我没说。</p>
+<p>这篇手记是解决后续利用 rclone 自动上传 aria2 下载的文件到 onedrive 或者 googledrive。到 aria2 的目录创建脚本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vi autoupload.sh<br></code></pre></td></tr></table></figure>
+
+<p>脚本如下(作者：P3TERX，<a target="_blank" rel="noopener" href="https://github.com/P3TERX/aria2.conf">Github页面地址</a>)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-comment">#=================================================</span><br><span class="hljs-comment"># Description: Aria2 download completes calling Rclone upload</span><br><span class="hljs-comment"># Lisence: MIT</span><br><span class="hljs-comment"># Version: 1.8</span><br><span class="hljs-comment"># Author: P3TERX</span><br><span class="hljs-comment"># Blog: https://p3terx.com</span><br><span class="hljs-comment">#=================================================</span><br><br>downloadpath=<span class="hljs-string">&#x27;/usr/local/caddy/www/file&#x27;</span> <span class="hljs-comment">#Aria2下载目录</span><br>name=<span class="hljs-string">&#x27;remote&#x27;</span> <span class="hljs-comment">#配置Rclone时填写的name</span><br>folder=<span class="hljs-string">&#x27;/backup&#x27;</span> <span class="hljs-comment">#网盘里的文件夹，留空为整个网盘。</span><br>retry_num=3 <span class="hljs-comment">#上传失败重试次数</span><br><br><span class="hljs-comment">#=================下面不需要修改===================</span><br>filepath=<span class="hljs-variable">$3</span> <span class="hljs-comment">#Aria2传递给脚本的文件路径。BT下载有多个文件时该值为文件夹内第一个文件，如/root/Download/a/b/1.mp4</span><br>rdp=<span class="hljs-variable">$&#123;filepath#<span class="hljs-variable">$&#123;downloadpath&#125;</span>/&#125;</span> <span class="hljs-comment">#路径转换，去掉开头的下载路径。</span><br>path=<span class="hljs-variable">$&#123;downloadpath&#125;</span>/<span class="hljs-variable">$&#123;rdp%%/*&#125;</span> <span class="hljs-comment">#路径转换。下载文件夹时为顶层文件夹路径，普通单文件下载时与文件路径相同。</span><br><br><span class="hljs-function"><span class="hljs-title">Task_INFO</span></span>()&#123;<br><span class="hljs-built_in">echo</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;[\033[1;32mUPLOAD\033[0m] Task information:&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;————————– [\033[1;33mINFO\033[0m] ————————–&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[1;35mDownload path：\033[0m<span class="hljs-variable">$&#123;downloadpath&#125;</span>&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[1;35mFile path: \033[0m<span class="hljs-variable">$&#123;filepath&#125;</span>&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[1;35mUpload path: \033[0m<span class="hljs-variable">$&#123;uploadpath&#125;</span>&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;\033[1;35mRemote path：\033[0m<span class="hljs-variable">$&#123;remotepath&#125;</span>&quot;</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;————————– [\033[1;33mINFO\033[0m] ————————–&quot;</span><br><span class="hljs-built_in">echo</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-title">Upload</span></span>()&#123;<br>retry=0<br><span class="hljs-keyword">while</span> [ <span class="hljs-variable">$retry</span> -le <span class="hljs-variable">$retry_num</span> -a -e <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;uploadpath&#125;</span>&quot;</span> ]; <span class="hljs-keyword">do</span><br>[ <span class="hljs-variable">$retry</span> != 0 ] &amp;&amp; <span class="hljs-built_in">echo</span> &amp;&amp; <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;Upload failed! Retry <span class="hljs-variable">$&#123;retry&#125;</span>/<span class="hljs-variable">$&#123;retry_num&#125;</span> …&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span><br>rclone move -v <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;uploadpath&#125;</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;remotepath&#125;</span>&quot;</span><br>rclone rmdirs -v <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;downloadpath&#125;</span>&quot;</span> –leave-root<br>retry=$((<span class="hljs-variable">$retry</span>+<span class="hljs-number">1</span>))<br><span class="hljs-keyword">done</span><br>[ -e <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;uploadpath&#125;</span>&quot;</span> ] &amp;&amp; <span class="hljs-built_in">echo</span> &amp;&amp; <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;Upload failed: <span class="hljs-variable">$&#123;uploadpath&#125;</span>&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span><br>[ -e <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;path&#125;</span>&quot;</span>.aria2 ] &amp;&amp; rm -vf <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;path&#125;</span>&quot;</span>.aria2<br>[ -e <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;filepath&#125;</span>&quot;</span>.aria2 ] &amp;&amp; rm -vf <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;filepath&#125;</span>&quot;</span>.aria2<br>&#125;<br><br><span class="hljs-keyword">if</span> [ <span class="hljs-variable">$2</span> -eq 0 ]<br><span class="hljs-keyword">then</span><br><span class="hljs-built_in">exit</span> 0<br><span class="hljs-keyword">fi</span><br><br><span class="hljs-built_in">echo</span> &amp;&amp; <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot; \033[1;33mU P L O A D ! ! !\033[0m&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span><br><span class="hljs-built_in">echo</span> &amp;&amp; <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot; \033[1;32mU P L O A D ! ! !\033[0m&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span><br><span class="hljs-built_in">echo</span> &amp;&amp; <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot; \033[1;35mU P L O A D ! ! !\033[0m&quot;</span> &amp;&amp; <span class="hljs-built_in">echo</span><br><br><span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$path</span>&quot;</span> = <span class="hljs-string">&quot;<span class="hljs-variable">$filepath</span>&quot;</span> ] &amp;&amp; [ <span class="hljs-variable">$2</span> -eq 1 ] <span class="hljs-comment">#普通单文件下载，移动文件到设定的网盘文件夹。</span><br><span class="hljs-keyword">then</span><br>uploadpath=<span class="hljs-variable">$&#123;filepath&#125;</span><br>remotepath=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;name&#125;</span>:<span class="hljs-variable">$&#123;folder&#125;</span>&quot;</span><br>Task_INFO<br>Upload<br><span class="hljs-built_in">exit</span> 0<br><span class="hljs-keyword">elif</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$path</span>&quot;</span> != <span class="hljs-string">&quot;<span class="hljs-variable">$filepath</span>&quot;</span> ] &amp;&amp; [ <span class="hljs-variable">$2</span> -gt 1 ] <span class="hljs-comment">#BT下载（文件夹内文件数大于1），移动整个文件夹到设定的网盘文件夹。</span><br><span class="hljs-keyword">then</span><br>uploadpath=<span class="hljs-variable">$&#123;path&#125;</span><br>remotepath=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;name&#125;</span>:<span class="hljs-variable">$&#123;folder&#125;</span>/<span class="hljs-variable">$&#123;rdp%%/*&#125;</span>&quot;</span><br>Task_INFO<br>Upload<br><span class="hljs-built_in">exit</span> 0<br><span class="hljs-keyword">elif</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$path</span>&quot;</span> != <span class="hljs-string">&quot;<span class="hljs-variable">$filepath</span>&quot;</span> ] &amp;&amp; [ <span class="hljs-variable">$2</span> -eq 1 ] <span class="hljs-comment">#第三方度盘工具下载（子文件夹或多级目录等情况下的单文件下载）、BT下载（文件夹内文件数等于1），移动文件到设定的网盘文件夹下的相同路径文件夹。</span><br><span class="hljs-keyword">then</span><br>uploadpath=<span class="hljs-variable">$&#123;filepath&#125;</span><br>remotepath=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;name&#125;</span>:<span class="hljs-variable">$&#123;folder&#125;</span>/<span class="hljs-variable">$&#123;rdp%/*&#125;</span>&quot;</span><br>Task_INFO<br>Upload<br><span class="hljs-built_in">exit</span> 0<br><span class="hljs-keyword">fi</span><br>Task_INFO<br></code></pre></td></tr></table></figure>
+
+<p>需要修改的地方只有这三行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">downloadpath=<span class="hljs-string">&#x27;/usr/local/caddy/www/file&#x27;</span> <span class="hljs-comment">#Aria2下载目录</span><br>name=<span class="hljs-string">&#x27;remote&#x27;</span> <span class="hljs-comment">#配置Rclone时填写的name</span><br>folder=<span class="hljs-string">&#x27;/backup&#x27;</span> <span class="hljs-comment">#网盘里的文件夹，留空为整个网盘。</span><br></code></pre></td></tr></table></figure>
+
+<p><code>/usr/local/caddy/www/file</code> 这个对应你aria2的下载目录（比如用我们的的增强脚本就是<code>/root/downloads</code>），<code>remote</code> 对应你配置rclone的时候设置的名称，<code>/backup</code> 对应你想同步上传到你网盘的哪个目录，如果留空就是根目录（如果没有这个目录，会自动创建）。 修改完毕后，给这个脚本执行权限：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bsah">chmod +x autoupload.sh<br></code></pre></td></tr></table></figure>
+
+<p>然后编辑aria2的配置文件（位置在<code>/root/.aria2c</code>），找到<code>on-download-complete</code>，修改内容为这句：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 调用 rclone 上传(move)到网盘</span><br>on-download-complete=/root/.aria2c/autoupload.sh<br></code></pre></td></tr></table></figure>
+
+<p>这就是利用rclone的on-download-complete自动上传aria2下载好的文件。</p>
+<p>重新启动aria2：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/etc/init.d/aria2 restart<br></code></pre></td></tr></table></figure>
+
+<p>重启Aria2使配置文件生效，这样就大功告成了。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/aria2/">aria2</a>
+                    
+                      <a class="hover-with-bg" href="/tags/rclone/">rclone</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/08/10/dedipath-openvz%E8%B0%83%E6%95%99/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">dedipath openvz调教</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/30/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/">
+                        <span class="hidden-mobile">常用的一键脚本</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
