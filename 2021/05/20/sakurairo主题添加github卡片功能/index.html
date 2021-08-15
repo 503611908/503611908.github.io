@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083228.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083228.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -68,7 +68,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>Eutaboo</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      99 字
+      98 字
     </span>
   
 
@@ -201,6 +201,14 @@
   
 
   
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
   
 </div>
 
@@ -227,9 +235,14 @@
             <!-- SEO header -->
             <h1 style="display: none">Sakurairo主题添加github卡片功能</h1>
             
+              <p class="note note-info">
+                
+                  本文最后更新于：12 分钟前
+                
+              </p>
+            
             <div class="markdown-body">
-              <p>[toc]</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="在主题的function-php处加入以下短代码"><a href="#在主题的function-php处加入以下短代码" class="headerlink" title="在主题的function.php处加入以下短代码"></a>在主题的function.php处加入以下短代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">github</span>(<span class="hljs-params"><span class="hljs-variable">$atts</span>,<span class="hljs-variable">$content</span>=<span class="hljs-literal">null</span>,<span class="hljs-variable">$code</span>=<span class="hljs-string">&quot;&quot;</span></span>)</span>&#123;<br>    <span class="hljs-variable">$return</span> = <span class="hljs-string">&#x27;&lt;iframe frameborder=&quot;0&quot; scrolling=&quot;0&quot; allowtransparency=&quot;true&quot; src=&quot;https://api.2heng.xin/github-card/?repo=&#x27;</span>;<br>    <span class="hljs-variable">$return</span> .= <span class="hljs-variable">$content</span>;<br>    <span class="hljs-variable">$return</span> .= <span class="hljs-string">&#x27;&quot; width=&quot;400&quot; height=&quot;200&quot; style=&quot;margin-left: 50%; transform: translateX(-50%);&quot;&gt;&lt;/iframe&gt;&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable">$return</span>;<br>&#125;<br>add_shortcode(<span class="hljs-string">&#x27;github&#x27;</span>,<span class="hljs-string">&#x27;github&#x27;</span>);<br></code></pre></td></tr></table></figure>
+              <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="在主题的function-php处加入以下短代码"><a href="#在主题的function-php处加入以下短代码" class="headerlink" title="在主题的function.php处加入以下短代码"></a>在主题的function.php处加入以下短代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">github</span>(<span class="hljs-params"><span class="hljs-variable">$atts</span>,<span class="hljs-variable">$content</span>=<span class="hljs-literal">null</span>,<span class="hljs-variable">$code</span>=<span class="hljs-string">&quot;&quot;</span></span>)</span>&#123;<br>    <span class="hljs-variable">$return</span> = <span class="hljs-string">&#x27;&lt;iframe frameborder=&quot;0&quot; scrolling=&quot;0&quot; allowtransparency=&quot;true&quot; src=&quot;https://api.2heng.xin/github-card/?repo=&#x27;</span>;<br>    <span class="hljs-variable">$return</span> .= <span class="hljs-variable">$content</span>;<br>    <span class="hljs-variable">$return</span> .= <span class="hljs-string">&#x27;&quot; width=&quot;400&quot; height=&quot;200&quot; style=&quot;margin-left: 50%; transform: translateX(-50%);&quot;&gt;&lt;/iframe&gt;&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable">$return</span>;<br>&#125;<br>add_shortcode(<span class="hljs-string">&#x27;github&#x27;</span>,<span class="hljs-string">&#x27;github&#x27;</span>);<br></code></pre></td></tr></table></figure>
 
 <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="用-github-作者名-仓库名-github"><a href="#用-github-作者名-仓库名-github" class="headerlink" title="用[github]作者名/仓库名[/github]"></a>用[<code>github</code>]作者名/仓库名[/<code>github</code>]</h3>
             </div>
@@ -346,6 +359,30 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
 
@@ -405,6 +442,8 @@
 
 
 
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 
@@ -428,6 +467,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
 

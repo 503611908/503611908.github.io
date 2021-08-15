@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083228.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083228.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -68,7 +68,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>Eutaboo</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      361 字
+      360 字
     </span>
   
 
@@ -201,6 +201,14 @@
   
 
   
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
   
 </div>
 
@@ -227,9 +235,14 @@
             <!-- SEO header -->
             <h1 style="display: none">OneDrive+OneManager搭建分享网盘</h1>
             
+              <p class="note note-info">
+                
+                  本文最后更新于：12 分钟前
+                
+              </p>
+            
             <div class="markdown-body">
-              <p>[toc]</p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
+              <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
 <li> 域名（我放到了CloudFare下）</li>
 <li> VPS（我用的CloudCone双11版）</li>
 <li> OneDrive账号</li>
@@ -244,7 +257,7 @@
 <li>[img]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165421.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165421.png\[/img\]</a> 点击新注册 [img]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165448.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165448.png\[/img\]</a> 名称随便填，然后选择“任何组织目录(任何 Azure AD 目录 - 多租户)中的帐户和个人 Microsoft 帐户(例如，Skype、Xbox) ”，url填写<code>https://scfonedrive.github.io/</code>，将生成的客户端ID保存</li>
 <li>[img]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165510.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165510.png\[/img\]</a> 点击证书与密码-&gt;新客户端密码，说明随便填，时间选24个月，将生成的值保存。注意！！！这里如果不保存，后面就不显示了</li>
 <li>[img]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210809165532.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210809165532.png\[/img\]</a> 点击API权限，添加权限-&gt;Microsoft Graph-&gt;委托的权限，搜索 <code>Files.ReadWrite.All</code>并添加</li>
-<li>返回OneManager，将客户端id和值填入，点确认即可</li>
+<li> 返回OneManager，将客户端id和值填入，点确认即可</li>
 </ol>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>若安装时点验证伪静态出现201弹窗报错，说明是伪静态没有设置好。</p>
 
@@ -256,9 +269,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
-                    
                       <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
                     
                   </div>
                 
@@ -295,8 +308,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/06/27/%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E8%87%AA%E5%8D%91/">
-                        <span class="hidden-mobile">人为什么会自卑</span>
+                      <a href="/2021/06/04/v2ray%E6%8A%A5%E9%94%99/">
+                        <span class="hidden-mobile">v2ray报错</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -366,6 +379,30 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
 
@@ -425,6 +462,8 @@
 
 
 
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 
@@ -448,6 +487,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
 

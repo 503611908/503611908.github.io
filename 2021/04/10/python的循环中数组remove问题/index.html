@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083228.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083228.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -68,7 +68,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>Eutaboo</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      160 字
+      159 字
     </span>
   
 
@@ -201,6 +201,14 @@
   
 
   
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
   
 </div>
 
@@ -227,9 +235,14 @@
             <!-- SEO header -->
             <h1 style="display: none">python的循环中数组remove问题</h1>
             
+              <p class="note note-info">
+                
+                  本文最后更新于：12 分钟前
+                
+              </p>
+            
             <div class="markdown-body">
-              <p>[toc]</p>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h3 id="在循环中删除数组元素时，会出现如下问题"><a href="#在循环中删除数组元素时，会出现如下问题" class="headerlink" title="在循环中删除数组元素时，会出现如下问题"></a>在循环中删除数组元素时，会出现如下问题</h3><p>[img]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083230.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083230.png\[/img\]</a></p>
+              <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h3 id="在循环中删除数组元素时，会出现如下问题"><a href="#在循环中删除数组元素时，会出现如下问题" class="headerlink" title="在循环中删除数组元素时，会出现如下问题"></a>在循环中删除数组元素时，会出现如下问题</h3><p>[img]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083230.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083230.png\[/img\]</a></p>
 <h3 id="当运行时会发现出现数组下标溢出问题。这是由于列表的可变性，每一次删除一个元素，列表的长度就会发生变化，元素的索引也会发生变化。"><a href="#当运行时会发现出现数组下标溢出问题。这是由于列表的可变性，每一次删除一个元素，列表的长度就会发生变化，元素的索引也会发生变化。" class="headerlink" title="当运行时会发现出现数组下标溢出问题。这是由于列表的可变性，每一次删除一个元素，列表的长度就会发生变化，元素的索引也会发生变化。"></a>当运行时会发现出现数组下标溢出问题。这是由于列表的可变性，每一次删除一个元素，列表的长度就会发生变化，元素的索引也会发生变化。</h3><hr>
 <h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><h3 id="利用deepcopy来复制一个数组出来，对该数组比对，原数组删除"><a href="#利用deepcopy来复制一个数组出来，对该数组比对，原数组删除" class="headerlink" title="利用deepcopy来复制一个数组出来，对该数组比对，原数组删除"></a>利用deepcopy来复制一个数组出来，对该数组比对，原数组删除</h3><p>[img]<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/503611908/tc/20210801083238.png/[/img/]">https://cdn.jsdelivr.net/gh/503611908/tc/20210801083238.png\[/img\]</a></p>
 <h3 id="至于为什么不用b-a来复制，因为涉及到引用和深浅复制的问题，因此不细说"><a href="#至于为什么不用b-a来复制，因为涉及到引用和深浅复制的问题，因此不细说" class="headerlink" title="至于为什么不用b = a来复制，因为涉及到引用和深浅复制的问题，因此不细说"></a>至于为什么不用b = a来复制，因为涉及到引用和深浅复制的问题，因此不细说</h3>
@@ -351,6 +364,30 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
 
@@ -410,6 +447,8 @@
 
 
 
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 
@@ -433,6 +472,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
 
